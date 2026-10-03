@@ -1,0 +1,65 @@
+{% extends "base/public_base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Choose Your State" %} — Civic AI{% endblock %}
+
+{% block public_content %}
+<div style="min-height:calc(100vh - 130px);background:linear-gradient(135deg, rgba(244, 247, 253, 0.94) 0%, rgba(235, 243, 255, 0.96) 100%), url('{% static 'images/civic_ai/brand/cloud_bg.png' %}') center/cover no-repeat;background-image:linear-gradient(135deg, rgba(244, 247, 253, 0.94) 0%, rgba(235, 243, 255, 0.96) 100%), image-set(url('{% static 'images/civic_ai/brand/cloud_bg.webp' %}') type('image/webp'), url('{% static 'images/civic_ai/brand/cloud_bg.png' %}') type('image/png'));display:flex;align-items:center;padding:var(--space-12) 0;">
+  <div class="container-md">
+
+    <!-- Header -->
+    <div style="text-align:center;margin-bottom:var(--space-10);">
+      <div style="display:inline-flex;align-items:center;justify-content:center;width:70px;height:70px;background:var(--color-primary-50);border-radius:50%;margin-bottom:var(--space-5);">
+        <img src="{% static 'images/civic_ai/icons/icon_dashboard.png' %}" alt="" style="width:38px;height:38px;object-fit:contain;">
+      </div>
+      <h1 style="font-size:var(--font-size-2xl);">{% trans "Choose Your State" %}</h1>
+      <p style="color:var(--color-text-muted);margin-top:var(--space-3);font-size:var(--font-size-md);">
+        {% trans "Select your state to see relevant government schemes and services." %}
+      </p>
+    </div>
+
+    <!-- State Cards -->
+    <div class="grid-2" style="margin-bottom:var(--space-8);">
+      {% for state in states %}
+      <form method="post" action="{% url 'states:set_state' %}">
+        {% csrf_token %}
+        <input type="hidden" name="state_slug" value="{{ state.slug }}">
+        <button type="submit" class="choice-card" style="width:100%;padding:var(--space-5);cursor:pointer;background:none;font-family:inherit;text-align:left;" aria-label="{% trans 'Select' %} {{ state.name }}">
+          <div style="width:100%;height:180px;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:var(--space-4);background:var(--color-cloud);box-shadow:var(--shadow-sm);">
+            <picture>
+              {% if state.card_image_webp %}<source srcset="{% static state.card_image_webp %}" type="image/webp">{% endif %}
+              <img
+                src="{% static state.card_image %}"
+                alt="{{ state.transition_landmark|default:state.name }}"
+                style="width:100%;height:100%;object-fit:cover;"
+                loading="lazy" decoding="async"
+              >
+            </picture>
+          </div>
+          <div style="font-size:var(--font-size-xl);font-weight:700;color:var(--color-text-primary);">{{ state.name }}</div>
+          <div style="font-size:var(--font-size-md);color:var(--color-text-muted);margin-top:var(--space-1);">{{ state.native_name }}</div>
+          {% if state.capital %}
+          <div style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin-top:var(--space-2);">
+            {{ state.capital }}
+          </div>
+          {% endif %}
+        </button>
+      </form>
+      {% empty %}
+      <div class="card" style="grid-column:1/-1;text-align:center;padding:var(--space-10);">
+        <p style="color:var(--color-text-muted);">{% trans "No states available at the moment." %}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Coming soon -->
+    <div class="card" style="text-align:center;background:var(--color-gray-50);border:1.5px dashed var(--color-gray-300);">
+      <p style="color:var(--color-text-muted);font-size:var(--font-size-sm);margin:0;">
+        <strong>{% trans "More states coming soon:" %}</strong>
+        {% trans "Telangana, Kerala, Karnataka, Maharashtra, and more." %}
+      </p>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

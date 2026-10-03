@@ -1,0 +1,192 @@
+{% extends "base/base.html" %}
+{% load i18n static %}
+
+{% block body_class %}has-sidebar{% endblock %}
+
+{% block body %}
+<div class="app-shell">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="{% trans 'Application navigation' %}">
+    <!-- Logo -->
+    <a href="{% url 'dashboard:home' %}" class="sidebar-logo" aria-label="{% trans 'Civic AI Home' %}">
+      <img src="{% static 'images/civic_ai/brand/logo.png' %}" alt="Civic AI">
+    </a>
+
+    <!-- Navigation -->
+    <nav class="sidebar-nav">
+      <ul role="list" style="list-style:none;">
+        <li>
+          <a href="{% url 'dashboard:home' %}" class="nav-item {% if request.resolver_match.namespace == 'dashboard' and request.resolver_match.url_name == 'home' %}active{% endif %}" aria-current="{% if request.resolver_match.namespace == 'dashboard' and request.resolver_match.url_name == 'home' %}page{% endif %}">
+            <img src="{% static 'images/civic_ai/icons/icon_dashboard.png' %}" alt="" class="nav-icon">
+            {% trans "Dashboard" %}
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'schemes:list' %}?eligible=1" class="nav-item {% if request.resolver_match.namespace == 'schemes' and 'eligible' in request.GET %}active{% endif %}">
+            <img src="{% static 'images/civic_ai/icons/icon_my_schemes.png' %}" alt="" class="nav-icon">
+            {% trans "My Schemes" %}
+            {% if eligible_count %}
+            <span class="nav-badge" aria-label="{{ eligible_count }} eligible schemes">{{ eligible_count }}</span>
+            {% endif %}
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'schemes:list' %}" class="nav-item {% if request.resolver_match.namespace == 'schemes' and 'eligible' not in request.GET %}active{% endif %}">
+            <img src="{% static 'images/civic_ai/icons/icon_explore_schemes.png' %}" alt="" class="nav-icon">
+            {% trans "Explore Schemes" %}
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'assistant:home' %}" class="nav-item {% if request.resolver_match.namespace == 'assistant' %}active{% endif %}">
+            <img src="{% static 'images/civic_ai/icons/icon_ai_assistant.png' %}" alt="" class="nav-icon">
+            {% trans "AI Assistant" %}
+          </a>
+        </li>
+
+        <div class="nav-section-label">{% trans "My Activity" %}</div>
+
+        <li>
+          <a href="{% url 'applications:list' %}" class="nav-item {% if request.resolver_match.namespace == 'applications' %}active{% endif %}">
+            <img src="{% static 'images/civic_ai/icons/icon_applications.png' %}" alt="" class="nav-icon">
+            {% trans "Applications" %}
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'documents:overview' %}" class="nav-item {% if request.resolver_match.namespace == 'documents' %}active{% endif %}">
+            <img src="{% static 'images/civic_ai/icons/icon_documents.png' %}" alt="" class="nav-icon">
+            {% trans "Documents" %}
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'notifications:list' %}" class="nav-item {% if request.resolver_match.namespace == 'notifications' %}active{% endif %}">
+            <img src="{% static 'images/civic_ai/icons/icon_notifications.png' %}" alt="" class="nav-icon">
+            {% trans "Notifications" %}
+            {% if unread_notifications %}
+            <span class="nav-badge" aria-label="{{ unread_notifications }} unread notifications">{{ unread_notifications }}</span>
+            {% endif %}
+          </a>
+        </li>
+
+        <div class="nav-section-label">{% trans "Account" %}</div>
+
+        <li>
+          <a href="{% url 'dashboard:profile' %}" class="nav-item {% if request.resolver_match.namespace == 'dashboard' and request.resolver_match.url_name == 'profile' %}active{% endif %}">
+            <img src="{% static 'images/civic_ai/icons/icon_profile.png' %}" alt="" class="nav-icon">
+            {% trans "Profile" %}
+          </a>
+        </li>
+        <li>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- User section in footer -->
+    <div class="sidebar-footer">
+      <form method="post" action="{% url 'states:set_language' %}" style="margin-bottom:var(--space-3);">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ request.get_full_path }}">
+        <label for="appLanguage" style="display:block;margin-bottom:var(--space-1);font-size:var(--font-size-xs);color:var(--color-text-muted);">{% trans "Preferred Language" %}</label>
+        <select id="appLanguage" name="language_code" class="form-select" onchange="this.form.submit()" aria-label="{% trans 'Choose Your Language' %}">
+          <option value="en" {% if current_language == 'en' %}selected{% endif %}>English</option>
+          <option value="ta" {% if current_language == 'ta' %}selected{% endif %}>தமிழ்</option>
+          <option value="te" {% if current_language == 'te' %}selected{% endif %}>తెలుగు</option>
+        </select>
+        <noscript><button type="submit" class="btn btn-ghost btn-sm">{% trans "Continue" %}</button></noscript>
+      </form>
+      {% if user.is_authenticated %}
+      <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-3);">
+        <div style="width:36px;height:36px;background:var(--color-primary-100);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-primary-dark);font-size:var(--font-size-sm);flex-shrink:0;">
+          {{ user.get_short_name|first|upper }}
+        </div>
+        <div style="min-width:0;">
+          <div style="font-weight:600;font-size:var(--font-size-sm);color:var(--color-text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ user.get_display_name }}</div>
+          <div style="font-size:var(--font-size-xs);color:var(--color-text-muted);">{{ user.mobile_number }}</div>
+        </div>
+      </div>
+      <form method="post" action="{% url 'accounts:logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-ghost btn-sm btn-full" style="justify-content:flex-start;">
+          {% trans "Sign Out" %}
+        </button>
+      </form>
+      {% else %}
+      <a href="{% url 'accounts:login' %}" class="btn btn-primary btn-sm btn-full">
+        {% trans "Sign In" %}
+      </a>
+      {% endif %}
+    </div>
+  </aside>
+
+  <!-- Mobile Menu Toggle -->
+  <button
+    type="button"
+    id="mobile-menu-toggle"
+    class="btn btn-ghost btn-sm"
+    style="display:none;position:fixed;top:var(--space-4);left:var(--space-4);z-index:300;"
+    aria-expanded="false"
+    aria-controls="sidebar"
+    aria-label="{% trans 'Toggle navigation menu' %}"
+    onclick="toggleSidebar()"
+  >☰</button>
+
+  <!-- Sidebar overlay -->
+  <div id="sidebar-overlay" onclick="toggleSidebar()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:99;"></div>
+
+  <!-- Main Content -->
+  <main class="main-content" id="main-content" tabindex="-1">
+    {% block app_content %}{% endblock %}
+  </main>
+
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-nav" aria-label="{% trans 'Mobile navigation' %}">
+    <a href="{% url 'dashboard:home' %}" class="mobile-nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+      <img src="{% static 'images/civic_ai/icons/icon_dashboard.png' %}" alt="" class="icon">
+      <span>{% trans "Home" %}</span>
+    </a>
+    <a href="{% url 'schemes:list' %}" class="mobile-nav-item {% if request.resolver_match.namespace == 'schemes' %}active{% endif %}">
+      <img src="{% static 'images/civic_ai/icons/icon_explore_schemes.png' %}" alt="" class="icon">
+      <span>{% trans "Schemes" %}</span>
+    </a>
+    <a href="{% url 'assistant:home' %}" class="mobile-nav-item {% if request.resolver_match.namespace == 'assistant' %}active{% endif %}">
+      <img src="{% static 'images/civic_ai/icons/icon_ai_assistant.png' %}" alt="" class="icon">
+      <span>{% trans "AI" %}</span>
+    </a>
+    <a href="{% url 'notifications:list' %}" class="mobile-nav-item {% if request.resolver_match.namespace == 'notifications' %}active{% endif %}">
+      <img src="{% static 'images/civic_ai/icons/icon_notifications.png' %}" alt="" class="icon">
+      <span>{% trans "Alerts" %}</span>
+    </a>
+    <a href="{% url 'dashboard:profile' %}" class="mobile-nav-item {% if request.resolver_match.url_name == 'profile' %}active{% endif %}">
+      <img src="{% static 'images/civic_ai/icons/icon_profile.png' %}" alt="" class="icon">
+      <span>{% trans "Profile" %}</span>
+    </a>
+  </nav>
+</div>
+
+<script>
+  // Sidebar toggle for mobile
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    const btn = document.getElementById('mobile-menu-toggle');
+    const isOpen = sidebar.classList.toggle('open');
+    overlay.style.display = isOpen ? 'block' : 'none';
+    btn.setAttribute('aria-expanded', isOpen);
+  }
+
+  // Show mobile toggle on small screens
+  function checkMobile() {
+    const btn = document.getElementById('mobile-menu-toggle');
+    btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+  }
+  checkMobile();
+  window.addEventListener('resize', checkMobile);
+
+  // CSRF helper for fetch
+  function getCsrfToken() {
+    return document.querySelector('meta[name="csrf-token"]')?.content || '';
+  }
+</script>
+
+{% block extra_js %}{% endblock %}
+{% endblock %}

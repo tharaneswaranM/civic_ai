@@ -1,0 +1,108 @@
+{% extends "base/app_base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "My Applications" %} — Civic AI{% endblock %}
+
+{% block app_content %}
+<div class="page-header" style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:var(--space-4);">
+  <div>
+    <h1 class="page-title" style="display:flex;align-items:center;gap:var(--space-3);">
+      <img src="{% static 'images/civic_ai/icons/icon_applications.png' %}" alt="" style="width:40px;height:40px;object-fit:contain;">
+      <span>{% trans "Application Tracker" %}</span>
+    </h1>
+    <p class="page-subtitle">
+      {% trans "Track your personal application status, documentation progress, and portal reference numbers." %}
+    </p>
+  </div>
+  <a href="{% url 'schemes:list' %}" class="btn btn-primary btn-sm">
+    + {% trans "Track New Scheme" %}
+  </a>
+</div>
+
+<!-- Notice -->
+<div style="background:var(--color-sky);border:1px solid var(--color-primary-100);border-radius:var(--radius-lg);padding:var(--space-4);margin-bottom:var(--space-6);display:flex;align-items:flex-start;gap:var(--space-3);">
+  <img src="{% static 'images/civic_ai/icons/icon_information.png' %}" alt="" style="width:24px;height:24px;object-fit:contain;flex-shrink:0;margin-top:2px;">
+  <p style="font-size:var(--font-size-xs);color:var(--color-primary-dark);margin:0;line-height:1.5;">
+    <strong>{% trans "Note:" %}</strong>
+    {% trans "This tracker is a personal management tool. Actual application submission and official verification occur on authorized government web portals." %}
+  </p>
+</div>
+
+{% if applications %}
+<div style="display:flex;flex-direction:column;gap:var(--space-4);">
+  {% for app in applications %}
+  <div class="card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4);">
+    <div style="flex:1;min-width:240px;">
+      <div style="display:flex;gap:var(--space-2);margin-bottom:var(--space-2);align-items:center;">
+        {% if app.scheme.state %}
+        <span class="badge badge-state">{{ app.scheme.state.name }}</span>
+        {% else %}
+        <span class="badge badge-central">{% trans "Central" %}</span>
+        {% endif %}
+
+        <!-- Status badge -->
+        <span class="badge" style="
+          {% if app.status == 'approved' or app.status == 'completed' %}background:var(--color-success-light);color:var(--color-success);
+          {% elif app.status == 'rejected' %}background:var(--color-error-light);color:var(--color-error);
+          {% elif app.status == 'under_verification' or app.status == 'submitted' %}background:var(--color-primary-50);color:var(--color-primary);
+          {% else %}background:var(--color-warning-light);color:var(--color-warning);{% endif %}
+        ">
+          ● {{ app.get_status_display }}
+        </span>
+      </div>
+
+      <h3 style="font-size:var(--font-size-md);margin-bottom:var(--space-1);">
+        <a href="{% url 'applications:detail' app.pk %}" style="color:var(--color-text-primary);text-decoration:none;">
+          {{ app.scheme.name }}
+        </a>
+      </h3>
+
+      {% if app.application_reference %}
+      <div style="font-size:var(--font-size-xs);color:var(--color-text-muted);">
+        {% trans "Ref No:" %} <strong>{{ app.application_reference }}</strong>
+      </div>
+      {% endif %}
+
+      <div style="font-size:var(--font-size-xs);color:var(--color-text-muted);margin-top:var(--space-1);">
+        {% trans "Updated" %} {{ app.updated_at|date:"d M Y" }}
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div style="display:flex;gap:var(--space-2);">
+      <a href="{% url 'applications:detail' app.pk %}" class="btn btn-secondary btn-sm">
+        {% trans "Manage Status" %} →
+      </a>
+      <a href="{% url 'schemes:detail' app.scheme.slug %}" class="btn btn-ghost btn-sm">
+        {% trans "Scheme Info" %}
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% if applications.has_other_pages %}
+<nav aria-label="{% trans 'Application pages' %}" style="display:flex;justify-content:center;align-items:center;gap:var(--space-3);margin-top:var(--space-6);">
+  {% if applications.has_previous %}
+  <a class="btn btn-ghost btn-sm" href="?page={{ applications.previous_page_number }}">{% trans "Previous" %}</a>
+  {% endif %}
+  <span aria-current="page">{% trans "Page" %} {{ applications.number }} / {{ applications.paginator.num_pages }}</span>
+  {% if applications.has_next %}
+  <a class="btn btn-ghost btn-sm" href="?page={{ applications.next_page_number }}">{% trans "Next" %}</a>
+  {% endif %}
+</nav>
+{% endif %}
+{% else %}
+<div class="card" style="text-align:center;padding:var(--space-12);">
+  <div style="margin-bottom:var(--space-4);">
+    <img src="{% static 'images/civic_ai/icons/icon_applications.png' %}" alt="" style="width:56px;height:56px;object-fit:contain;">
+  </div>
+  <h2>{% trans "No tracked applications yet" %}</h2>
+  <p style="color:var(--color-text-muted);max-width:440px;margin:var(--space-2) auto var(--space-6);">
+    {% trans "When you find a scheme you want to apply for, click 'Track Application' on its details page to monitor your preparation and milestones." %}
+  </p>
+  <a href="{% url 'schemes:list' %}" class="btn btn-primary">
+    {% trans "Find Schemes to Apply" %}
+  </a>
+</div>
+{% endif %}
+{% endblock %}

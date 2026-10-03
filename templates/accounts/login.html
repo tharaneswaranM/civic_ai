@@ -1,0 +1,150 @@
+{% extends "base/public_base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Sign In" %} — Civic AI{% endblock %}
+
+{% block public_content %}
+<div style="min-height:calc(100vh - 130px);display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, rgba(244, 247, 253, 0.94) 0%, rgba(235, 243, 255, 0.96) 100%), url('{% static 'images/civic_ai/brand/cloud_bg.png' %}') center/cover no-repeat;background-image:linear-gradient(135deg, rgba(244, 247, 253, 0.94) 0%, rgba(235, 243, 255, 0.96) 100%), image-set(url('{% static 'images/civic_ai/brand/cloud_bg.webp' %}') type('image/webp'), url('{% static 'images/civic_ai/brand/cloud_bg.png' %}') type('image/png'));padding:var(--space-10) var(--space-4);">
+  <div style="width:100%;max-width:880px;margin:0 auto;">
+
+    <!-- 2-Column Split Card -->
+    <div class="card card-lg" style="display:grid;grid-template-columns:1fr 1.08fr;gap:0;padding:0;overflow:hidden;border-radius:var(--radius-2xl);box-shadow:var(--shadow-xl);border:1px solid rgba(26,86,164,0.12);">
+
+      <!-- Left Panel: State-Specific Hero Visual -->
+      <div style="position:relative;background:var(--color-primary-dark);min-height:360px;display:flex;flex-direction:column;justify-content:flex-end;">
+        <picture>
+          {% if selected_state.login_image_webp %}<source srcset="{% static selected_state.login_image_webp %}" type="image/webp">{% endif %}
+          <img
+            src="{% static selected_state.login_image|default:'images/civic_ai/brand/hero_family.png' %}"
+            alt="{% if selected_state %}{{ selected_state.name }}{% else %}Civic AI{% endif %}"
+            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+            decoding="async"
+          >
+        </picture>
+        <!-- Soft gradient overlay for text readability -->
+        <div style="position:relative;z-index:2;background:linear-gradient(to top, rgba(0, 32, 96, 0.92) 0%, rgba(0, 53, 128, 0.45) 60%, rgba(0, 53, 128, 0.15) 100%);padding:var(--space-8);color:white;">
+          <div class="badge" style="background:rgba(255,255,255,0.22);color:white;align-self:flex-start;margin-bottom:var(--space-3);backdrop-filter:blur(4px);">
+            {% if selected_state %}{{ selected_state.name }}{% else %}Civic AI{% endif %}
+          </div>
+          <h2 style="font-size:var(--font-size-xl);color:white;margin:0 0 var(--space-2);font-weight:800;line-height:1.25;">
+            {% if selected_state %}
+              {{ selected_state.transition_title|default:selected_state.name }}
+            {% else %}
+              {% trans "Government Schemes Made Simple" %}
+            {% endif %}
+          </h2>
+          <p style="font-size:var(--font-size-xs);color:rgba(255,255,255,0.85);margin:0;line-height:1.6;">
+            {% if selected_state %}
+              {{ selected_state.transition_landmark|default:selected_state.transition_subtitle }}
+            {% else %}
+              {% trans "Discover benefits, evaluate eligibility, and access citizen rights in your language." %}
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Panel: Login Form -->
+      <div style="padding:var(--space-8);display:flex;flex-direction:column;justify-content:center;background:#fff;">
+
+        <!-- Header -->
+        <div style="margin-bottom:var(--space-6);">
+          <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4);">
+            <img src="{% static 'images/civic_ai/brand/logo.png' %}" alt="Civic AI" style="height:38px;width:auto;max-width:180px;object-fit:contain;">
+            <span style="font-size:var(--font-size-xs);color:var(--color-text-muted);border-left:1px solid var(--color-gray-200);padding-left:10px;">{% trans "Citizen Portal" %}</span>
+          </div>
+
+          <h1 style="font-size:var(--font-size-2xl);font-weight:700;margin:0 0 var(--space-1);">{% trans "Welcome Back" %}</h1>
+          <p style="color:var(--color-text-muted);font-size:var(--font-size-sm);margin:0;">
+            {% trans "Enter your mobile number to receive a secure OTP" %}
+          </p>
+        </div>
+
+        <!-- Form -->
+        <form method="post" action="{% url 'accounts:send_otp' %}" id="loginForm" novalidate>
+          {% csrf_token %}
+
+          <div class="form-group">
+            <label class="form-label" for="mobile_number">
+              {% trans "Mobile Number" %}
+            </label>
+            <div class="phone-input-wrapper" role="group" aria-label="{% trans 'Mobile number input' %}">
+              <div class="phone-prefix">+91</div>
+              <input
+                type="tel"
+                id="mobile_number"
+                name="mobile_number"
+                class="phone-input"
+                placeholder="{% trans '10-digit mobile number' %}"
+                maxlength="10"
+                pattern="[0-9]{10}"
+                inputmode="numeric"
+                autocomplete="tel-national"
+                required
+                aria-required="true"
+                aria-describedby="mobile-hint"
+              >
+            </div>
+            <div class="form-hint" id="mobile-hint">
+              {% trans "Enter 10-digit Indian mobile number" %}
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-full" id="sendOtpBtn" style="margin-top:var(--space-2);">
+            <span>{% trans "Send OTP" %}</span>
+            <span>→</span>
+          </button>
+
+          <p style="font-size:var(--font-size-xs);color:var(--color-text-muted);text-align:center;margin-top:var(--space-4);">
+            {% trans "By continuing, you agree to our" %}
+            <span style="color:var(--color-primary);">{% trans "Privacy Policy" %}</span>.
+          </p>
+        </form>
+
+        <hr class="divider" style="margin:var(--space-5) 0;">
+
+        <!-- Privacy note -->
+        <div style="background:var(--color-sky);border-radius:var(--radius-lg);padding:var(--space-3) var(--space-4);">
+          <p style="font-size:var(--font-size-xs);color:var(--color-text-secondary);margin:0;line-height:1.5;display:flex;align-items:flex-start;gap:6px;">
+            <img src="{% static 'images/civic_ai/icons/icon_information.png' %}" alt="" style="width:16px;height:16px;object-fit:contain;margin-top:2px;flex-shrink:0;">
+            <span><strong>{% trans "Your privacy is protected." %}</strong> {% trans "No password needed. We only use your profile to match eligible schemes." %}</span>
+          </p>
+        </div>
+
+        <!-- Change state link -->
+        <div style="margin-top:var(--space-4);text-align:center;">
+          <a href="{% url 'states:select_state' %}" style="font-size:var(--font-size-xs);color:var(--color-text-muted);text-decoration:none;">
+            ← {% trans "Change jurisdiction or state" %}
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  @media (max-width: 768px) {
+    .card-lg[style*="grid-template-columns"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  const form = document.getElementById('loginForm');
+  const btn = document.getElementById('sendOtpBtn');
+  const input = document.getElementById('mobile_number');
+
+  input.addEventListener('input', function() {
+    this.value = this.value.replace(/\D/g, '').slice(0, 10);
+  });
+
+  form.addEventListener('submit', function() {
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner" style="width:18px;height:18px;margin-right:8px;"></span> {% trans "Sending..." %}';
+  });
+</script>
+{% endblock %}

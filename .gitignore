@@ -1,0 +1,31 @@
+# Local secrets and environment settings
+.env
+*.env
+!.env.example
+
+# Databases and user uploads
+*.sqlite3
+*.sqlite3-journal
+media/
+
+# Python environments and generated files
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Collected/static build output and logs
+staticfiles/
+logs/
+*.log
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

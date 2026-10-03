@@ -1,0 +1,95 @@
+{% extends "base/base.html" %}
+{% load i18n static %}
+
+{% block title %}{{ localized_transition_title }} — Civic AI{% endblock %}
+
+{% block body %}
+<div class="state-transition" id="transition-page"
+  style="--transition-primary: {{ state.transition_color_primary|default:'#003580' }};
+         --transition-secondary: {{ state.transition_color_accent|default:'#1a56a4' }};
+         background-image: linear-gradient(135deg, rgba(0, 32, 96, 0.88), rgba(26, 86, 164, 0.92)), url('{% static state.transition_image %}');
+         {% if state.transition_image_webp %}background-image: linear-gradient(135deg, rgba(0, 32, 96, 0.88), rgba(26, 86, 164, 0.92)), image-set(url('{% static state.transition_image_webp %}') type('image/webp'), url('{% static state.transition_image %}') type('image/png'));{% endif %}
+         background-size: cover; background-position: center;">
+
+  <!-- Decorative cloud shapes -->
+  <div class="cloud-shape" style="width:400px;height:400px;top:-150px;right:-100px;"></div>
+  <div class="cloud-shape" style="width:250px;height:250px;bottom:50px;left:-50px;"></div>
+  <div class="cloud-shape" style="width:180px;height:180px;top:40%;right:20%;"></div>
+
+  <!-- Content -->
+  <div class="transition-content" style="animation:fadeInUp 0.8s ease forwards;">
+    <!-- State Transition Image Showcase -->
+    <div style="width:130px;height:130px;border-radius:50%;overflow:hidden;margin:0 auto var(--space-4);border:3.5px solid rgba(255,255,255,0.45);box-shadow:0 8px 24px rgba(0,0,0,0.25);background:rgba(255,255,255,0.1);">
+      <picture>
+        {% if state.transition_image_webp %}<source srcset="{% static state.transition_image_webp %}" type="image/webp">{% endif %}
+        <img
+          src="{% static state.transition_image %}"
+          alt="{{ state.transition_landmark|default:state.name }}"
+          style="width:100%;height:100%;object-fit:cover;"
+          decoding="async"
+        >
+      </picture>
+    </div>
+
+    {% if state.transition_landmark %}
+    <p style="font-size:var(--font-size-xs);text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.6);margin-bottom:var(--space-3);">
+      {{ state.transition_landmark }}
+    </p>
+    {% endif %}
+
+    <h1 class="transition-title">
+      {{ localized_transition_title }}
+    </h1>
+
+    <p class="transition-subtitle">
+      {{ localized_transition_subtitle }}
+    </p>
+
+    <!-- Language selection -->
+    <div style="margin-top:var(--space-6);">
+      <p style="font-size:var(--font-size-sm);color:rgba(255,255,255,0.8);margin-bottom:var(--space-4);">
+        {% trans "Select your preferred language to continue" %}
+      </p>
+      <div style="display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap;">
+        {% for lang in languages %}
+        <form method="post" action="{% url 'states:set_language' %}" style="display:inline;">
+          {% csrf_token %}
+          <input type="hidden" name="language_code" value="{{ lang.code }}">
+          <button type="submit"
+            class="btn btn-lg"
+            style="background:{% if lang.code == suggested_language %}rgba(255,255,255,0.3){% else %}rgba(255,255,255,0.15){% endif %};color:white;border:1.5px solid rgba(255,255,255,0.4);min-width:130px;"
+            aria-label="{% trans 'Continue in' %} {{ lang.name }}">
+            {% if lang.flag_emoji %}{{ lang.flag_emoji }} {% endif %}{{ lang.native_name }}{% if lang.code == suggested_language %} — {% trans "Suggested" %}{% endif %}
+          </button>
+        </form>
+        {% empty %}
+        <form method="post" action="{% url 'states:set_language' %}" style="display:inline;">
+          {% csrf_token %}
+          <input type="hidden" name="language_code" value="en">
+          <button type="submit" class="btn btn-lg" style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.4);">
+            English
+          </button>
+        </form>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Skip link -->
+    <div style="margin-top:var(--space-8);">
+      <a href="{% url 'accounts:login' %}" style="color:rgba(255,255,255,0.6);font-size:var(--font-size-sm);">
+        {% trans "Skip" %} →
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes fadeInUp {
+    from { opacity:0; transform:translateY(30px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    #transition-page * { animation:none !important; }
+  }
+</style>
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends "base/app_base.html" %}
+{% load i18n static %}
+
+{% block title %}{{ application.scheme.name }} — {% trans "Application Tracker" %} — Civic AI{% endblock %}
+
+{% block app_content %}
+<!-- Breadcrumb -->
+<nav aria-label="{% trans 'Breadcrumb' %}" style="margin-bottom:var(--space-4);">
+  <ol style="display:flex;align-items:center;gap:var(--space-2);list-style:none;font-size:var(--font-size-sm);color:var(--color-text-muted);">
+    <li><a href="{% url 'dashboard:home' %}">{% trans "Dashboard" %}</a></li>
+    <li>›</li>
+    <li><a href="{% url 'applications:list' %}">{% trans "Applications" %}</a></li>
+    <li>›</li>
+    <li aria-current="page" style="color:var(--color-text-primary);font-weight:600;">
+      {{ application.scheme.name|truncatechars:40 }}
+    </li>
+  </ol>
+</nav>
+
+<div class="page-header">
+  <h1 class="page-title">{{ application.scheme.name }}</h1>
+  <p class="page-subtitle">{% trans "Application Status & Personal Notes" %}</p>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 340px;gap:var(--space-6);align-items:start;">
+
+  <!-- Left: Status updater -->
+  <div style="display:flex;flex-direction:column;gap:var(--space-6);">
+    <div class="card">
+      <h2 style="font-size:var(--font-size-lg);margin-bottom:var(--space-4);display:flex;align-items:center;gap:var(--space-2);">
+        <img src="{% static 'images/civic_ai/icons/icon_applications.png' %}" alt="" style="width:22px;height:22px;object-fit:contain;">
+        <span>{% trans "Current Stage" %}</span>
+      </h2>
+
+      <form method="post" action="{% url 'applications:update_status' application.pk %}">
+        {% csrf_token %}
+        <div class="form-group">
+          <label class="form-label" for="id_status">{% trans "Update Application Status" %}</label>
+          <select name="status" id="id_status" class="form-select" style="max-width:320px;">
+            {% for code, label in application.STATUS_CHOICES %}
+            <option value="{{ code }}" {% if application.status == code %}selected{% endif %}>
+              {{ label }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-sm">
+          ✓ {% trans "Save Status Update" %}
+        </button>
+      </form>
+    </div>
+
+    <!-- Official Portal Reference -->
+    <div class="card">
+      <h2 style="font-size:var(--font-size-lg);margin-bottom:var(--space-3);display:flex;align-items:center;gap:var(--space-2);">
+        <img src="{% static 'images/civic_ai/icons/icon_explore_schemes.png' %}" alt="" style="width:22px;height:22px;object-fit:contain;">
+        <span>{% trans "Official Submission Link" %}</span>
+      </h2>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-4);">
+        {% trans "Submit your application or check official status on the official portal." %}
+      </p>
+      {% if official_url %}
+      <a href="{{ official_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+        {% trans "Open Official Portal" %} ↗
+      </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Right: Meta -->
+  <div class="card">
+    <h3 style="font-size:var(--font-size-md);margin-bottom:var(--space-3);">
+      {% trans "Summary" %}
+    </h3>
+    <div style="display:flex;flex-direction:column;gap:var(--space-3);font-size:var(--font-size-sm);">
+      <div>
+        <div style="color:var(--color-text-muted);">{% trans "Jurisdiction" %}</div>
+        <div style="font-weight:600;">
+          {% if application.scheme.state %}{{ application.scheme.state.name }}{% else %}{% trans "Central Government" %}{% endif %}
+        </div>
+      </div>
+      <div>
+        <div style="color:var(--color-text-muted);">{% trans "Tracked Since" %}</div>
+        <div style="font-weight:600;">{{ application.created_at|date:"d M Y" }}</div>
+      </div>
+      <div>
+        <div style="color:var(--color-text-muted);">{% trans "Last Updated" %}</div>
+        <div style="font-weight:600;">{{ application.updated_at|date:"d M Y" }}</div>
+      </div>
+    </div>
+    <div style="margin-top:var(--space-5);padding-top:var(--space-4);border-top:1px solid var(--color-gray-200);">
+      <a href="{% url 'schemes:detail' application.scheme.slug %}" class="btn btn-ghost btn-sm btn-full">
+        {% trans "View Full Scheme Details" %} →
+      </a>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

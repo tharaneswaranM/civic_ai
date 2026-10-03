@@ -1,0 +1,1650 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nLanguage: ta\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "10-digit mobile number"
+msgstr "10 இலக்க கைப்பேசி எண்"
+
+msgid "6-digit PIN"
+msgstr "6 இலக்க PIN"
+
+msgid "About"
+msgstr "பற்றி"
+
+msgid "About Civic AI"
+msgstr "Civic AI பற்றி"
+
+msgid "AI"
+msgstr "செயற்கை நுண்ணறிவு"
+
+msgid "AI Assistant"
+msgstr "செயற்கை நுண்ணறிவு உதவியாளர்"
+
+msgid "Alerts"
+msgstr "எச்சரிக்கைகள்"
+
+msgid "Applications"
+msgstr "விண்ணப்பங்கள்"
+
+msgid "Browse Schemes"
+msgstr "அரசுத் திட்டங்களைப் பார்க்கவும்"
+
+msgid "Change jurisdiction or state"
+msgstr "மாநிலத்தை மாற்றவும்"
+
+msgid "Choose Your State"
+msgstr "உங்கள் மாநிலத்தைத் தேர்ந்தெடுக்கவும்"
+
+msgid "Choose Your State to Begin"
+msgstr "தொடங்க உங்கள் மாநிலத்தைத் தேர்ந்தெடுக்கவும்"
+
+msgid "Choose Your Language"
+msgstr "உங்கள் மொழியைத் தேர்ந்தெடுக்கவும்"
+
+msgid "Citizen Portal"
+msgstr "குடிமக்கள் தளம்"
+
+msgid "Continue"
+msgstr "தொடரவும்"
+
+msgid "Continue in"
+msgstr "இந்த மொழியில் தொடரவும்"
+
+msgid "Create Profile"
+msgstr "சுயவிவரத்தை உருவாக்கவும்"
+
+msgid "Dashboard"
+msgstr "முகப்புப் பலகை"
+
+msgid "Date of Birth"
+msgstr "பிறந்த தேதி"
+
+msgid "Dismiss"
+msgstr "மூடு"
+
+msgid "Documents"
+msgstr "ஆவணங்கள்"
+
+msgid "Education"
+msgstr "கல்வி"
+
+msgid "Education & Employment"
+msgstr "கல்வி மற்றும் வேலைவாய்ப்பு"
+
+msgid "Eligible"
+msgstr "தகுதியானவர்"
+
+msgid "Eligible Schemes"
+msgstr "தகுதியுள்ள திட்டங்கள்"
+
+msgid "Employment"
+msgstr "வேலைவாய்ப்பு"
+
+msgid "Enter 10-digit Indian mobile number"
+msgstr "10 இலக்க இந்திய கைப்பேசி எண்ணை உள்ளிடவும்"
+
+msgid "Enter the 6-digit code sent to"
+msgstr "அனுப்பப்பட்ட 6 இலக்க குறியீட்டை உள்ளிடவும்"
+
+msgid "Family Details"
+msgstr "குடும்ப விவரங்கள்"
+
+msgid "Get Started"
+msgstr "தொடங்குங்கள்"
+
+msgid "Government Schemes Made Simple"
+msgstr "அரசுத் திட்டங்களை எளிதாக்குகிறோம்"
+
+msgid "Help & Support"
+msgstr "உதவி மற்றும் ஆதரவு"
+
+msgid "Home"
+msgstr "முகப்பு"
+
+msgid "Income"
+msgstr "வருமானம்"
+
+msgid "Income & Family"
+msgstr "வருமானம் மற்றும் குடும்பம்"
+
+msgid "Language"
+msgstr "மொழி"
+
+msgid "Languages"
+msgstr "மொழிகள்"
+
+msgid "Location"
+msgstr "இருப்பிடம்"
+
+msgid "Login"
+msgstr "உள்நுழைவு"
+
+msgid "Male"
+msgstr "ஆண்"
+
+msgid "Female"
+msgstr "பெண்"
+
+msgid "Mobile Number"
+msgstr "கைப்பேசி எண்"
+
+msgid "My Activity"
+msgstr "எனது செயல்பாடுகள்"
+
+msgid "My Applications"
+msgstr "எனது விண்ணப்பங்கள்"
+
+msgid "My Documents"
+msgstr "எனது ஆவணங்கள்"
+
+msgid "My Eligible Schemes"
+msgstr "எனக்குத் தகுதியுள்ள திட்டங்கள்"
+
+msgid "My Profile"
+msgstr "எனது சுயவிவரம்"
+
+msgid "My Schemes"
+msgstr "எனது திட்டங்கள்"
+
+msgid "Namaste! I am Civic AI."
+msgstr "வணக்கம்! நான் Civic AI."
+
+msgid "New Schemes"
+msgstr "புதிய திட்டங்கள்"
+
+msgid "No"
+msgstr "இல்லை"
+
+msgid "Notifications"
+msgstr "அறிவிப்புகள்"
+
+msgid "OTP input"
+msgstr "OTP உள்ளீடு"
+
+msgid "Personal Information"
+msgstr "தனிப்பட்ட தகவல்கள்"
+
+msgid "Preferred Language"
+msgstr "விருப்ப மொழி"
+
+msgid "Profile"
+msgstr "சுயவிவரம்"
+
+msgid "Profile Setup"
+msgstr "சுயவிவர அமைப்பு"
+
+msgid "Recommended for You"
+msgstr "உங்களுக்கான பரிந்துரைகள்"
+
+msgid "Resend OTP"
+msgstr "OTP-ஐ மீண்டும் அனுப்பவும்"
+
+msgid "Required Documents"
+msgstr "தேவையான ஆவணங்கள்"
+
+msgid "Respond in:"
+msgstr "பதில் மொழி:"
+
+msgid "Save"
+msgstr "சேமிக்கவும்"
+
+msgid "Save Scheme"
+msgstr "திட்டத்தைச் சேமிக்கவும்"
+
+msgid "Schemes"
+msgstr "திட்டங்கள்"
+
+msgid "Search"
+msgstr "தேடுக"
+
+msgid "Send"
+msgstr "அனுப்பவும்"
+
+msgid "Send OTP"
+msgstr "OTP-ஐ அனுப்பவும்"
+
+msgid "Sending..."
+msgstr "அனுப்பப்படுகிறது..."
+
+msgid "Sign In"
+msgstr "உள்நுழைக"
+
+msgid "Sign Out"
+msgstr "வெளியேறுக"
+
+msgid "Skip"
+msgstr "தவிர்க்கவும்"
+
+msgid "Suggested"
+msgstr "பரிந்துரை"
+
+msgid "Tamil"
+msgstr "தமிழ்"
+
+msgid "Telugu"
+msgstr "தெலுங்கு"
+
+msgid "Verify OTP"
+msgstr "OTP-ஐ சரிபார்க்கவும்"
+
+msgid "View Details"
+msgstr "விவரங்களைக் காண்க"
+
+msgid "Welcome Back"
+msgstr "மீண்டும் வரவேற்கிறோம்"
+
+msgid "Which schemes am I eligible for?"
+msgstr "எந்தத் திட்டங்களுக்கு நான் தகுதியுடையவன்?"
+
+msgid "What schemes exist for farmers in Andhra Pradesh?"
+msgstr "ஆந்திரப் பிரதேச விவசாயிகளுக்கு என்ன திட்டங்கள் உள்ளன?"
+
+msgid "Explain Magalir Urimai scheme in Tamil"
+msgstr "மகளிர் உரிமைத் திட்டத்தை விளக்கவும்"
+
+msgid "What documents do I need for income certificate?"
+msgstr "வருமானச் சான்றிதழுக்கு என்ன ஆவணங்கள் தேவை?"
+
+msgid "What are my rights under Right to Information (RTI)?"
+msgstr "தகவல் அறியும் உரிமைச் சட்டத்தின் கீழ் எனக்கு என்ன உரிமைகள் உள்ளன?"
+
+msgid "Select a suggested topic below or type your question."
+msgstr "கீழே உள்ள தலைப்பைத் தேர்ந்தெடுக்கவும் அல்லது உங்கள் கேள்வியைத் தட்டச்சு செய்யவும்."
+
+msgid "Your personalized civic advisor for government schemes, eligibility rules, and citizen legal rights."
+msgstr "அரசுத் திட்டங்கள், தகுதி விதிகள் மற்றும் குடிமக்கள் உரிமைகள் குறித்து உங்களுக்கு உதவும் தனிப்பட்ட வழிகாட்டி."
+
+msgid "I can help you discover schemes you may be eligible for, break down application steps, list required documents, or clarify citizen legal rights in your preferred language."
+msgstr "உங்களுக்குப் பொருந்தக்கூடிய திட்டங்களைக் கண்டறியவும், விண்ணப்பப் படிகளை விளக்கவும், தேவையான ஆவணங்களைப் பட்டியலிடவும், குடிமக்கள் உரிமைகள் குறித்த கேள்விகளுக்கு உங்கள் விருப்ப மொழியில் பதிலளிக்கவும் முடியும்."
+
+msgid "Ask about schemes, eligibility, required documents, or legal rights..."
+msgstr "திட்டங்கள், தகுதி, தேவையான ஆவணங்கள் அல்லது சட்ட உரிமைகள் பற்றி கேளுங்கள்..."
+
+msgid "Thinking..."
+msgstr "யோசிக்கிறது..."
+
+msgid "Sources:"
+msgstr "ஆதாரங்கள்:"
+
+msgid "Based on your profile, I can see potential matches for government schemes."
+msgstr "உங்கள் சுயவிவரத்தின் அடிப்படையில், உங்களுக்குப் பொருந்தக்கூடிய அரசுத் திட்டங்கள் இருக்கலாம்."
+
+msgid "Please complete your profile for a full eligibility analysis."
+msgstr "முழுமையான தகுதி மதிப்பீட்டிற்கு உங்கள் சுயவிவரத்தை நிறைவு செய்யவும்."
+
+msgid "Visit the 'My Schemes' section to see your personalized recommendations."
+msgstr "உங்களுக்கான பரிந்துரைகளைப் பார்க்க “எனது திட்டங்கள்” பகுதிக்குச் செல்லவும்."
+
+msgid "Government schemes typically require: Aadhaar card, income certificate, bank passbook, caste certificate (if applicable), residence proof, and scheme-specific documents."
+msgstr "அரசுத் திட்டங்களுக்கு பொதுவாக ஆதார் அட்டை, வருமானச் சான்றிதழ், வங்கிக் கணக்குப் புத்தகம், (தேவையானால்) சமூகச் சான்றிதழ், இருப்பிடச் சான்று மற்றும் திட்டத்திற்குரிய ஆவணங்கள் தேவைப்படும்."
+
+msgid "Check each scheme's detail page for exact requirements."
+msgstr "சரியான தேவைகளை அறிய ஒவ்வொரு திட்டத்தின் விவரப் பக்கத்தையும் பார்க்கவும்."
+
+msgid "To apply for a government scheme: 1) Verify your eligibility, 2) Gather required documents, 3) Visit the official scheme portal or nearest government office, 4) Submit your application with documents, 5) Track your application status."
+msgstr "அரசுத் திட்டத்திற்கு விண்ணப்பிக்க: 1) உங்கள் தகுதியைச் சரிபார்க்கவும், 2) தேவையான ஆவணங்களைத் திரட்டவும், 3) அதிகாரப்பூர்வ இணையதளம் அல்லது அருகிலுள்ள அரசு அலுவலகத்திற்குச் செல்லவும், 4) ஆவணங்களுடன் விண்ணப்பத்தைச் சமர்ப்பிக்கவும், 5) விண்ணப்ப நிலையைப் பின்தொடரவும்."
+
+msgid "I can guide you for specific schemes."
+msgstr "குறிப்பிட்ட திட்டங்கள் குறித்தும் வழிகாட்ட முடியும்."
+
+msgid "I'm Civic AI, your assistant for government schemes and civic services."
+msgstr "நான் Civic AI; அரசுத் திட்டங்கள் மற்றும் குடிமக்கள் சேவைகள் குறித்த உங்கள் உதவியாளர்."
+
+msgid "I can help you discover schemes you may be eligible for, explain scheme details, list required documents, and guide you through the application process."
+msgstr "உங்களுக்குப் பொருந்தக்கூடிய திட்டங்களைக் கண்டறியவும், திட்ட விவரங்களை விளக்கவும், தேவையான ஆவணங்களைப் பட்டியலிடவும், விண்ணப்பச் செயல்முறையில் வழிகாட்டவும் முடியும்."
+
+msgid "What would you like to know?"
+msgstr "நீங்கள் என்ன தெரிந்துகொள்ள விரும்புகிறீர்கள்?"
+
+msgid "Please enter your mobile number."
+msgstr "உங்கள் கைப்பேசி எண்ணை உள்ளிடவும்."
+
+msgid "Please enter a valid 10-digit mobile number."
+msgstr "சரியான 10 இலக்க கைப்பேசி எண்ணை உள்ளிடவும்."
+
+msgid "Please enter a valid 6-digit OTP."
+msgstr "சரியான 6 இலக்க OTP-ஐ உள்ளிடவும்."
+
+msgid "Something went wrong. Please try again."
+msgstr "ஏதோ தவறு ஏற்பட்டது. மீண்டும் முயற்சிக்கவும்."
+
+msgid "Unable to connect to the assistant service. Please check your network connection."
+msgstr "உதவியாளர் சேவையுடன் இணைக்க முடியவில்லை. உங்கள் இணைய இணைப்பைச் சரிபார்க்கவும்."
+
+msgid "Sorry, I could not process your query. Please try again."
+msgstr "மன்னிக்கவும், உங்கள் கேள்வியைச் செயலாக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்."
+
+msgid "Welcome to Andhra Pradesh"
+msgstr "ஆந்திரப் பிரதேசத்திற்கு வரவேற்கிறோம்"
+
+msgid "Welcome to Tamil Nadu"
+msgstr "தமிழ்நாட்டிற்கு வரவேற்கிறோம்"
+
+msgid "Government schemes and citizen services personalized for you."
+msgstr "உங்களுக்கேற்ற அரசுத் திட்டங்களும் குடிமக்கள் சேவைகளும்."
+
+msgid "Select your preferred language to continue"
+msgstr "தொடர உங்கள் விருப்ப மொழியைத் தேர்ந்தெடுக்கவும்."
+
+msgid "Explore Schemes"
+msgstr "அரசுத் திட்டங்களை ஆராயுங்கள்"
+
+msgid "How to Apply"
+msgstr "விண்ணப்பிக்கும் முறை"
+
+msgid "Official Source"
+msgstr "அதிகாரப்பூர்வ மூலம்"
+
+msgid "Official Source & Verification"
+msgstr "அதிகாரப்பூர்வ மூலம் மற்றும் சரிபார்ப்பு"
+
+msgid "Enter OTP"
+msgstr "OTP-ஐ உள்ளிடவும்"
+
+msgid "Session expired. Please start again."
+msgstr "அமர்வு முடிந்துவிட்டது. மீண்டும் தொடங்கவும்."
+
+msgid "Invalid OTP. %(remaining)d attempts remaining."
+msgstr "தவறான OTP. மேலும் %(remaining)d முயற்சிகள் உள்ளன."
+
+msgid "Verification failed. Please try again."
+msgstr "சரிபார்ப்பு தோல்வியடைந்தது. மீண்டும் முயற்சிக்கவும்."
+
+msgid "Explore Current Schemes"
+msgstr "தற்போதைய திட்டங்களை ஆராயுங்கள்"
+
+msgid "Search by scheme name, keyword, or benefit..."
+msgstr "திட்டத்தின் பெயர், முக்கியச் சொல் அல்லது நன்மை மூலம் தேடுங்கள்..."
+
+msgid "Ask anything..."
+msgstr "எதையும் கேளுங்கள்..."
+
+msgid "Ask Civic AI"
+msgstr "Civic AI-யிடம் கேளுங்கள்"
+
+msgid "Unable to connect to AI assistant. Please try again."
+msgstr "AI உதவியாளரைத் தொடர்புகொள்ள முடியவில்லை. மீண்டும் முயற்சிக்கவும்."
+
+msgid "Failed to resend OTP"
+msgstr "OTP-ஐ மீண்டும் அனுப்ப முடியவில்லை"
+
+msgid "Expired"
+msgstr "காலாவதியானது"
+
+msgid "No schemes available for the selected filters."
+msgstr "தேர்ந்தெடுத்த வடிகட்டிகளுக்கு ஏற்ற திட்டங்கள் இல்லை."
+
+msgid "No schemes matched your search query. Try broadening your keywords or removing filters."
+msgstr "உங்கள் தேடலுக்குப் பொருந்தும் திட்டங்கள் இல்லை. தேடலை விரிவுபடுத்தவும் அல்லது வடிகட்டிகளை நீக்கவும்."
+
+msgid "No matching schemes found yet. Update your profile with more details to unlock eligibility."
+msgstr "பொருந்தும் திட்டங்கள் இன்னும் கிடைக்கவில்லை. தகுதியைக் கண்டறிய உங்கள் சுயவிவரத்தில் கூடுதல் விவரங்களைச் சேர்க்கவும்."
+
+msgid "Your profile is incomplete."
+msgstr "உங்கள் சுயவிவரம் முழுமையடையவில்லை."
+
+msgid "Please add your income information."
+msgstr "உங்கள் வருமான விவரங்களைச் சேர்க்கவும்."
+
+msgid "Complete Your Profile"
+msgstr "உங்கள் சுயவிவரத்தை நிறைவு செய்யுங்கள்"
+
+msgid "Complete your profile to discover schemes you may be eligible for."
+msgstr "உங்களுக்குத் தகுதியான திட்டங்களைக் கண்டறிய உங்கள் சுயவிவரத்தை நிறைவு செய்யுங்கள்."
+
+msgid "No states available at the moment."
+msgstr "தற்போது மாநிலங்கள் எதுவும் கிடைக்கவில்லை."
+
+msgid "Select District"
+msgstr "மாவட்டத்தைத் தேர்ந்தெடுக்கவும்"
+
+msgid "Select Education Level"
+msgstr "கல்வி நிலையைத் தேர்ந்தெடுக்கவும்"
+
+msgid "Select Employment Status"
+msgstr "வேலை நிலையைத் தேர்ந்தெடுக்கவும்"
+
+msgid "Select State"
+msgstr "மாநிலத்தைத் தேர்ந்தெடுக்கவும்"
+
+msgid "No Formal Education"
+msgstr "முறையான கல்வி இல்லை"
+
+msgid "Middle School (Class 6-8)"
+msgstr "நடுநிலைப் பள்ளி (6–8ஆம் வகுப்பு)"
+
+msgid "Higher Secondary (Class 12)"
+msgstr "மேல்நிலைப் பள்ளி (12ஆம் வகுப்பு)"
+
+msgid "Graduate (UG Degree)"
+msgstr "பட்டதாரி (இளங்கலை)"
+
+msgid "Postgraduate (PG Degree)"
+msgstr "முதுகலைப் பட்டதாரி"
+
+msgid "Doctorate (PhD)"
+msgstr "முனைவர் பட்டம் (PhD)"
+
+msgid "Employed (Salaried)"
+msgstr "ஊதியப் பணியாளர்"
+
+msgid "Self-Employed / Business"
+msgstr "சுயதொழில் / வணிகம்"
+
+msgid "Unemployed / Job Seeker"
+msgstr "வேலையில்லாதவர் / வேலை தேடுபவர்"
+
+msgid "Farmer / Agricultural Worker"
+msgstr "விவசாயி / வேளாண் தொழிலாளர்"
+
+msgid "Prefer not to say"
+msgstr "தெரிவிக்க விரும்பவில்லை"
+
+msgid "Other"
+msgstr "மற்றவை"
+
+msgid "Single"
+msgstr "திருமணமாகாதவர்"
+
+msgid "Married"
+msgstr "திருமணமானவர்"
+
+msgid "Widowed"
+msgstr "துணையை இழந்தவர்"
+
+msgid "Divorced"
+msgstr "விவாகரத்து பெற்றவர்"
+
+msgid "Separated"
+msgstr "பிரிந்து வாழ்பவர்"
+
+msgid "Landless"
+msgstr "நிலமற்றவர்"
+
+msgid "General citizen eligibility applies. Please refer to official portal guidelines."
+msgstr "பொதுக் குடிமக்களுக்கான தகுதி பொருந்தும். அதிகாரப்பூர்வ இணையதள வழிகாட்டுதல்களைப் பார்க்கவும்."
+
+msgid "Information Disclaimer:"
+msgstr "தகவல் மறுப்பு:"
+
+msgid "Information provided is for guidance only. Always verify with official government sources."
+msgstr "வழங்கப்படும் தகவல் வழிகாட்டுதலுக்காக மட்டுமே. அதிகாரப்பூர்வ அரசு ஆதாரங்களில் எப்போதும் சரிபார்க்கவும்."
+
+msgid "Closing Soon"
+msgstr "விரைவில் முடிவடைகிறது"
+
+msgid "No matches yet"
+msgstr "இன்னும் பொருத்தங்கள் இல்லை"
+
+msgid "Application Status & Personal Notes"
+msgstr "விண்ணப்ப நிலை மற்றும் தனிப்பட்ட குறிப்புகள்"
+
+msgid "Discover benefits, evaluate eligibility, and access citizen rights in your language."
+msgstr "உங்கள் மொழியில் நலன்களை அறிந்து, தகுதியை மதிப்பிட்டு, குடிமக்கள் உரிமைகளைப் பெறுங்கள்."
+
+msgid "Enter your mobile number to receive a secure OTP"
+msgstr "பாதுகாப்பான OTP பெற உங்கள் கைப்பேசி எண்ணை உள்ளிடவும்."
+
+msgid "By continuing, you agree to our"
+msgstr "தொடர்வதன் மூலம், எங்கள்"
+
+msgid "Privacy Policy"
+msgstr "தனியுரிமைக் கொள்கை"
+
+msgid "Your privacy is protected."
+msgstr "உங்கள் தனியுரிமை பாதுகாக்கப்படுகிறது."
+
+msgid "No password needed. We only use your profile to match eligible schemes."
+msgstr "கடவுச்சொல் தேவையில்லை. உங்களுக்குப் பொருந்தும் திட்டங்களைக் கண்டறிய உங்கள் சுயவிவரத்தை மட்டுமே பயன்படுத்துகிறோம்."
+
+msgid "Mobile number input"
+msgstr "கைப்பேசி எண் உள்ளீடு"
+
+msgid "OTP valid for"
+msgstr "OTP செல்லுபடியாகும் காலம்"
+
+msgid "Didn't receive the OTP?"
+msgstr "OTP வரவில்லையா?"
+
+msgid "Change mobile number"
+msgstr "கைப்பேசி எண்ணை மாற்றவும்"
+
+msgid "Digit"
+msgstr "இலக்கம்"
+
+msgid "Profile Setup — Civic AI"
+msgstr "சுயவிவர அமைப்பு — Civic AI"
+
+msgid "Step 1 of 5"
+msgstr "படி 1 / 5"
+
+msgid "Let's start with the basics. This helps us personalise your experience."
+msgstr "அடிப்படை விவரங்களுடன் தொடங்கலாம். இது உங்கள் அனுபவத்தைப் பொருத்தமாக அமைக்க உதவும்."
+
+msgid "Full Name"
+msgstr "முழுப் பெயர்"
+
+msgid "Gender"
+msgstr "பாலினம்"
+
+msgid "The language used across the platform."
+msgstr "தளம் முழுவதும் பயன்படுத்தப்படும் மொழி."
+
+msgid "Civic AI — Home"
+msgstr "Civic AI — முகப்பு"
+
+msgid "Setup progress"
+msgstr "அமைப்பு முன்னேற்றம்"
+
+msgid "Profile setup 20% complete"
+msgstr "சுயவிவர அமைப்பு 20% முடிந்தது"
+
+msgid "Personal information form"
+msgstr "தனிப்பட்ட தகவல் படிவம்"
+
+msgid "e.g. Ramesh Kumar"
+msgstr "எ.கா. ரமேஷ் குமார்"
+
+msgid "Select preferred language"
+msgstr "விருப்ப மொழியைத் தேர்ந்தெடுக்கவும்"
+
+msgid "Continue to step 2"
+msgstr "2ஆம் படிக்குத் தொடரவும்"
+
+msgid "Profile Setup — Location — Civic AI"
+msgstr "சுயவிவர அமைப்பு — இருப்பிடம் — Civic AI"
+
+msgid "Step 2 of 5"
+msgstr "படி 2 / 5"
+
+msgid "Your location helps us show relevant state and local government schemes."
+msgstr "உங்கள் இருப்பிடத்திற்குப் பொருத்தமான மாநில மற்றும் உள்ளூர் அரசு திட்டங்களைக் காட்ட இது உதவும்."
+
+msgid "State"
+msgstr "மாநிலம்"
+
+msgid "— Select State —"
+msgstr "— மாநிலத்தைத் தேர்ந்தெடுக்கவும் —"
+
+msgid "District"
+msgstr "மாவட்டம்"
+
+msgid "— Select District —"
+msgstr "— மாவட்டத்தைத் தேர்ந்தெடுக்கவும் —"
+
+msgid "City / Village"
+msgstr "நகரம் / கிராமம்"
+
+msgid "PIN Code"
+msgstr "அஞ்சல் குறியீடு"
+
+msgid "Area Type"
+msgstr "பகுதி வகை"
+
+msgid "Rural"
+msgstr "கிராமப்புறம்"
+
+msgid "Urban"
+msgstr "நகர்ப்புறம்"
+
+msgid "Back"
+msgstr "பின்னால்"
+
+msgid "Profile setup 40% complete"
+msgstr "சுயவிவர அமைப்பு 40% முடிந்தது"
+
+msgid "Location information form"
+msgstr "இருப்பிடத் தகவல் படிவம்"
+
+msgid "e.g. Chennai"
+msgstr "எ.கா. சென்னை"
+
+msgid "Back to step 1"
+msgstr "1ஆம் படிக்குத் திரும்பவும்"
+
+msgid "Continue to step 3"
+msgstr "3ஆம் படிக்குத் தொடரவும்"
+
+msgid "Profile Setup — Education & Employment — Civic AI"
+msgstr "சுயவிவர அமைப்பு — கல்வி மற்றும் வேலை — Civic AI"
+
+msgid "Step 3 of 5"
+msgstr "படி 3 / 5"
+
+msgid "This information helps match education and employment-related schemes."
+msgstr "கல்வி மற்றும் வேலைவாய்ப்பு தொடர்பான திட்டங்களுடன் பொருத்த இந்தத் தகவல் உதவும்."
+
+msgid "Education Level"
+msgstr "கல்வித் தகுதி"
+
+msgid "— Select Education Level —"
+msgstr "— கல்வித் தகுதியைத் தேர்ந்தெடுக்கவும் —"
+
+msgid "Primary (up to Class 5)"
+msgstr "தொடக்கக் கல்வி (5ஆம் வகுப்பு வரை)"
+
+msgid "Middle (up to Class 8)"
+msgstr "நடுநிலைக் கல்வி (8ஆம் வகுப்பு வரை)"
+
+msgid "Secondary (Class 10)"
+msgstr "இடைநிலைக் கல்வி (10ஆம் வகுப்பு)"
+
+msgid "Diploma / ITI"
+msgstr "டிப்ளமோ / ITI"
+
+msgid "Graduate (Bachelor's)"
+msgstr "பட்டதாரி (இளங்கலை)"
+
+msgid "Postgraduate (Master's)"
+msgstr "முதுகலை (மாஸ்டர்‌)"
+
+msgid "Employment Status"
+msgstr "வேலை நிலை"
+
+msgid "— Select Employment Status —"
+msgstr "— வேலை நிலையைத் தேர்ந்தெடுக்கவும் —"
+
+msgid "Employed"
+msgstr "பணியில் உள்ளவர்"
+
+msgid "Self-Employed"
+msgstr "சுயதொழில் செய்பவர்"
+
+msgid "Unemployed"
+msgstr "வேலையில்லாதவர்"
+
+msgid "Student"
+msgstr "மாணவர்"
+
+msgid "Homemaker"
+msgstr "இல்லத்தரசி / இல்லப் பொறுப்பாளர்"
+
+msgid "Retired"
+msgstr "ஓய்வுபெற்றவர்"
+
+msgid "Farmer"
+msgstr "விவசாயி"
+
+msgid "Daily Wage Worker"
+msgstr "தினக்கூலித் தொழிலாளர்"
+
+msgid "Occupation"
+msgstr "தொழில்"
+
+msgid "Sector"
+msgstr "துறை"
+
+msgid "I am currently a student"
+msgstr "நான் தற்போது மாணவராக உள்ளேன்"
+
+msgid "Current Course / Programme"
+msgstr "தற்போதைய பாடநெறி / திட்டம்"
+
+msgid "Profile setup 60% complete"
+msgstr "சுயவிவர அமைப்பு 60% முடிந்தது"
+
+msgid "Education and employment form"
+msgstr "கல்வி மற்றும் வேலைவாய்ப்பு படிவம்"
+
+msgid "e.g. Teacher, Driver"
+msgstr "எ.கா. ஆசிரியர், ஓட்டுநர்"
+
+msgid "e.g. Agriculture, IT"
+msgstr "எ.கா. வேளாண்மை, தகவல் தொழில்நுட்பம்"
+
+msgid "e.g. B.Tech Computer Science"
+msgstr "எ.கா. கணினி அறிவியல் B.Tech"
+
+msgid "Back to step 2"
+msgstr "2ஆம் படிக்குத் திரும்பவும்"
+
+msgid "Continue to step 4"
+msgstr "4ஆம் படிக்குத் தொடரவும்"
+
+msgid "Profile Setup — Income & Family — Civic AI"
+msgstr "சுயவிவர அமைப்பு — வருமானம் மற்றும் குடும்பம் — Civic AI"
+
+msgid "Step 4 of 5"
+msgstr "படி 4 / 5"
+
+msgid "Income and family details help match you to financial assistance schemes."
+msgstr "நிதி உதவித் திட்டங்களுடன் பொருத்த வருமானம் மற்றும் குடும்ப விவரங்கள் உதவும்."
+
+msgid "Annual Income"
+msgstr "ஆண்டு வருமானம்"
+
+msgid "Your Income"
+msgstr "உங்கள் வருமானம்"
+
+msgid "— Select Range —"
+msgstr "— வரம்பைத் தேர்ந்தெடுக்கவும் —"
+
+msgid "Below ₹1 Lakh"
+msgstr "₹1 லட்சத்திற்குக் கீழ்"
+
+msgid "₹1 – 3 Lakh"
+msgstr "₹1 – 3 லட்சம்"
+
+msgid "₹3 – 5 Lakh"
+msgstr "₹3 – 5 லட்சம்"
+
+msgid "₹5 – 8 Lakh"
+msgstr "₹5 – 8 லட்சம்"
+
+msgid "₹8 – 12 Lakh"
+msgstr "₹8 – 12 லட்சம்"
+
+msgid "Above ₹12 Lakh"
+msgstr "₹12 லட்சத்திற்கு மேல்"
+
+msgid "Family Income"
+msgstr "குடும்ப வருமானம்"
+
+msgid "Marital Status"
+msgstr "திருமண நிலை"
+
+msgid "— Select —"
+msgstr "— தேர்ந்தெடுக்கவும் —"
+
+msgid "Number of Dependents"
+msgstr "சார்ந்திருப்போர் எண்ணிக்கை"
+
+msgid "Social Category"
+msgstr "சமூகப் பிரிவு"
+
+msgid "— Select Category —"
+msgstr "— பிரிவைத் தேர்ந்தெடுக்கவும் —"
+
+msgid "General"
+msgstr "பொது"
+
+msgid "OBC (Other Backward Class)"
+msgstr "OBC (பிற பிற்படுத்தப்பட்ட வகுப்பு)"
+
+msgid "SC (Scheduled Caste)"
+msgstr "SC (அட்டவணைச் சாதி)"
+
+msgid "ST (Scheduled Tribe)"
+msgstr "ST (அட்டவணைப் பழங்குடி)"
+
+msgid "EWS (Economically Weaker Section)"
+msgstr "EWS (பொருளாதாரத்தில் நலிந்த பிரிவு)"
+
+msgid "This helps match category-specific schemes. Your data is kept private."
+msgstr "பிரிவு சார்ந்த திட்டங்களைக் கண்டறிய இது உதவும். உங்கள் தகவல்கள் தனிப்பட்ட முறையில் பாதுகாக்கப்படும்."
+
+msgid "Profile setup 80% complete"
+msgstr "சுயவிவர அமைப்பு 80% முடிந்தது"
+
+msgid "Income and family form"
+msgstr "வருமானம் மற்றும் குடும்பப் படிவம்"
+
+msgid "Back to step 3"
+msgstr "3ஆம் படிக்குத் திரும்பவும்"
+
+msgid "Continue to step 5"
+msgstr "5ஆம் படிக்குத் தொடரவும்"
+
+msgid "Profile Setup — Additional Details — Civic AI"
+msgstr "சுயவிவர அமைப்பு — கூடுதல் விவரங்கள் — Civic AI"
+
+msgid "Step 5 of 5 — Final Step"
+msgstr "படி 5 / 5 — இறுதிப் படி"
+
+msgid "Additional Details"
+msgstr "கூடுதல் விவரங்கள்"
+
+msgid "These optional details help Civic AI match specialized schemes for you (such as agriculture, pensions, disability benefits, etc.)."
+msgstr "இந்த விருப்ப விவரங்கள் வேளாண்மை, ஓய்வூதியம், மாற்றுத்திறனாளர் நலன் போன்ற சிறப்புத் திட்டங்களைக் கண்டறிய உதவும்."
+
+msgid "Are you a farmer or agricultural worker?"
+msgstr "நீங்கள் விவசாயியா அல்லது வேளாண்மைத் தொழிலாளரா?"
+
+msgid "Unlocks PM-KISAN, Rythu Bharosa, crop insurance, and state farm subsidies."
+msgstr "PM-KISAN, Rythu Bharosa, பயிர் காப்பீடு மற்றும் மாநில வேளாண் உதவித் திட்டங்களுக்கான பொருத்தத்தை அறிய உதவும்."
+
+msgid "Yes"
+msgstr "ஆம்"
+
+msgid "Land Holding Category"
+msgstr "நில உடைமை வகை"
+
+msgid "Select land category..."
+msgstr "நில வகையைத் தேர்ந்தெடுக்கவும்..."
+
+msgid "Landless Agricultural Worker"
+msgstr "நிலமற்ற வேளாண்மைத் தொழிலாளர்"
+
+msgid "Marginal (Less than 1 hectare / 2.5 acres)"
+msgstr "மிகக் குறைந்த நிலம் (1 ஹெக்டேருக்குக் கீழ் / 2.5 ஏக்கர்)"
+
+msgid "Small (1 to 2 hectares / 2.5 to 5 acres)"
+msgstr "சிறு நிலம் (1–2 ஹெக்டேர் / 2.5–5 ஏக்கர்)"
+
+msgid "Medium (2 to 4 hectares)"
+msgstr "நடுத்தர நிலம் (2–4 ஹெக்டேர்)"
+
+msgid "Large (Above 4 hectares)"
+msgstr "பெரிய நிலம் (4 ஹெக்டேருக்கு மேல்)"
+
+msgid "Do you have a recognized disability?"
+msgstr "அங்கீகரிக்கப்பட்ட மாற்றுத்திறன் உள்ளதா?"
+
+msgid "Unlocks disability pensions, assistive aid schemes, and fee concessions."
+msgstr "மாற்றுத்திறனாளர் ஓய்வூதியம், உதவி உபகரணத் திட்டங்கள் மற்றும் கட்டணச் சலுகைகளை அறிய உதவும்."
+
+msgid "Senior Citizen (Age 60+)?"
+msgstr "மூத்த குடிமகனா (வயது 60+)?"
+
+msgid "Old-age pensions, healthcare schemes, travel concessions."
+msgstr "முதியோர் ஓய்வூதியம், சுகாதாரத் திட்டங்கள் மற்றும் பயணச் சலுகைகளை அறிய உதவும்."
+
+msgid "Widow status?"
+msgstr "விதவை நிலையா?"
+
+msgid "Widow pension, livelihood assistance, welfare funds."
+msgstr "விதவை ஓய்வூதியம், வாழ்வாதார உதவி மற்றும் நல நிதிகளை அறிய உதவும்."
+
+msgid "Self-Help Group (SHG) Member?"
+msgstr "சுயஉதவிக் குழு (SHG) உறுப்பினரா?"
+
+msgid "Kudumbashree, Mahalir Thittam, DWCRA micro-loans and grants."
+msgstr "Kudumbashree, Mahalir Thittam, DWCRA சிறுகடன் மற்றும் மானியத் திட்டங்களை அறிய உதவும்."
+
+msgid "Actively Seeking Employment?"
+msgstr "வேலை தேடுகிறீர்களா?"
+
+msgid "Skill training, unemployment allowance, career matching."
+msgstr "திறன் பயிற்சி, வேலையின்மை உதவித்தொகை மற்றும் வேலைப் பொருத்தத்தை அறிய உதவும்."
+
+msgid "Entrepreneur or Planning a Business?"
+msgstr "தொழில்முனைவோரா அல்லது தொழில் தொடங்கத் திட்டமிடுகிறீர்களா?"
+
+msgid "PMEGP, Mudra loan subsidies, startup incubation grants."
+msgstr "PMEGP, முத்ரா கடன் சலுகைகள் மற்றும் தொடக்கநிலை நிறுவன மானியங்களை அறிய உதவும்."
+
+msgid "Ration Card / Food Security Card Holder?"
+msgstr "குடும்ப அட்டை / உணவுப் பாதுகாப்பு அட்டை உள்ளதா?"
+
+msgid "PDS benefits, state welfare card linkages."
+msgstr "பொது விநியோகத் திட்டப் பயன்கள் மற்றும் மாநில நல அட்டை இணைப்புகளை அறிய உதவும்."
+
+msgid "Complete Profile & Discover Schemes"
+msgstr "சுயவிவரத்தை முடித்து திட்டங்களைக் கண்டறியவும்"
+
+msgid "Complete profile and view dashboard"
+msgstr "சுயவிவரத்தை முடித்து முகப்புப் பலகையைப் பார்க்கவும்"
+
+msgid "Your Guide to Government Schemes and Rights"
+msgstr "அரசுத் திட்டங்கள் மற்றும் உரிமைகளுக்கான உங்கள் வழிகாட்டி"
+
+msgid "Personalized. Simple. Trusted."
+msgstr "உங்களுக்கேற்றது. எளிமை. நம்பகமானது."
+
+msgid "Discover government schemes you are eligible for, understand your rights, and get step-by-step guidance — all in your language."
+msgstr "உங்களுக்குப் பொருந்தும் அரசுத் திட்டங்களைக் கண்டறிந்து, உரிமைகளை அறிந்து, படிப்படியான வழிகாட்டுதலை உங்கள் மொழியில் பெறுங்கள்."
+
+msgid "Available in:"
+msgstr "கிடைக்கும் மொழிகள்:"
+
+msgid "100% Deterministic Scheme Matching"
+msgstr "100% விதி அடிப்படையிலான திட்டப் பொருத்தம்"
+
+msgid "Verified criteria • Multilingual assistance • Free for citizens"
+msgstr "சரிபார்க்கப்பட்ட நிபந்தனைகள் • பல்மொழி உதவி • குடிமக்களுக்கு இலவசம்"
+
+msgid "Active Schemes"
+msgstr "செயலில் உள்ள திட்டங்கள்"
+
+msgid "States Covered"
+msgstr "சேவை வழங்கும் மாநிலங்கள்"
+
+msgid "Always Free for Citizens"
+msgstr "குடிமக்களுக்கு எப்போதும் இலவசம்"
+
+msgid "How Civic AI Works"
+msgstr "Civic AI எவ்வாறு செயல்படுகிறது"
+
+msgid "Government information without government complexity."
+msgstr "சிக்கலின்றி அரசு தகவல்களைப் பெறுங்கள்."
+
+msgid "Tell us about yourself once. We handle the rest."
+msgstr "உங்களைப் பற்றிய விவரங்களை ஒருமுறை பகிருங்கள். மற்றவற்றை நாங்கள் பார்த்துக்கொள்கிறோம்."
+
+msgid "Discover Schemes"
+msgstr "திட்டங்களைக் கண்டறியவும்"
+
+msgid "We match your profile against hundreds of schemes."
+msgstr "நூற்றுக்கணக்கான திட்டங்களுடன் உங்கள் சுயவிவரத்தைப் பொருத்திப் பார்க்கிறோம்."
+
+msgid "Check Documents"
+msgstr "ஆவணங்களைப் பார்க்கவும்"
+
+msgid "See exactly which documents you need to apply."
+msgstr "விண்ணப்பிக்கத் தேவையான ஆவணங்களைத் துல்லியமாகப் பார்க்கவும்."
+
+msgid "Apply with Guidance"
+msgstr "வழிகாட்டுதலுடன் விண்ணப்பிக்கவும்"
+
+msgid "Get step-by-step help from our AI assistant."
+msgstr "எங்கள் AI உதவியாளரிடமிருந்து படிப்படியான உதவியைப் பெறுங்கள்."
+
+msgid "Civic AI is currently available in"
+msgstr "Civic AI தற்போது கிடைக்கும் மொழிகள்:"
+
+msgid "More states coming soon: Telangana, Kerala, Karnataka, Maharashtra..."
+msgstr "மேலும் மாநிலங்கள் விரைவில்: தெலங்கானா, கேரளா, கர்நாடகா, மகாராஷ்டிரா..."
+
+msgid "Civic AI provides general guidance based on publicly available government information. Final eligibility is determined by the responsible government authority. Always verify information from official government sources before making decisions."
+msgstr "பொதுவில் கிடைக்கும் அரசு தகவல்களின் அடிப்படையில் Civic AI பொதுவான வழிகாட்டுதலை வழங்குகிறது. இறுதித் தகுதியை சம்பந்தப்பட்ட அரசு அதிகாரியே தீர்மானிப்பார். முடிவெடுக்கும் முன் அதிகாரப்பூர்வ அரசு ஆதாரங்களில் தகவலைச் சரிபார்க்கவும்."
+
+msgid "Indian citizen family discovering government welfare schemes"
+msgstr "அரசு நலத் திட்டங்களை அறியும் இந்தியக் குடிமக்கள் குடும்பம்"
+
+msgid "Select"
+msgstr "தேர்ந்தெடுக்கவும்"
+
+msgid "Select your state to see relevant government schemes and services."
+msgstr "உங்களுக்குப் பொருத்தமான அரசுத் திட்டங்கள் மற்றும் சேவைகளைப் பார்க்க மாநிலத்தைத் தேர்ந்தெடுக்கவும்."
+
+msgid "More states coming soon:"
+msgstr "மேலும் மாநிலங்கள் விரைவில்:"
+
+msgid "Telangana, Kerala, Karnataka, Maharashtra, and more."
+msgstr "தெலங்கானா, கேரளா, கர்நாடகா, மகாராஷ்டிரா மற்றும் பல."
+
+msgid "Schemes tailored to your verified eligibility criteria."
+msgstr "சரிபார்க்கப்பட்ட உங்கள் தகுதி நிபந்தனைகளுக்குப் பொருந்தும் திட்டங்கள்."
+
+msgid "Discover central and state government schemes, subsidies, and citizen benefits."
+msgstr "மத்திய, மாநில அரசுத் திட்டங்கள், மானியங்கள் மற்றும் குடிமக்கள் நலன்களைக் கண்டறியவும்."
+
+msgid "View All Schemes"
+msgstr "அனைத்துத் திட்டங்களையும் பார்க்கவும்"
+
+msgid "All Jurisdictions"
+msgstr "அனைத்து ஆட்சிப் பகுதிகள்"
+
+msgid "Reset"
+msgstr "மீட்டமை"
+
+msgid "All Categories"
+msgstr "அனைத்து பிரிவுகள்"
+
+msgid "Central"
+msgstr "மத்திய"
+
+msgid "New"
+msgstr "புதியது"
+
+msgid "Check Info"
+msgstr "தகவலைப் பார்க்கவும்"
+
+msgid "Not Matching"
+msgstr "பொருந்தவில்லை"
+
+msgid "Saved"
+msgstr "சேமிக்கப்பட்டது"
+
+msgid "No schemes found"
+msgstr "திட்டங்கள் எதுவும் கிடைக்கவில்லை"
+
+msgid "Clear Filters"
+msgstr "வடிப்பான்களை நீக்கவும்"
+
+msgid "Update Profile"
+msgstr "சுயவிவரத்தைப் புதுப்பிக்கவும்"
+
+msgid "Search schemes"
+msgstr "திட்டங்களைத் தேடவும்"
+
+msgid "Filter by state"
+msgstr "மாநிலத்தின் அடிப்படையில் வடிகட்டவும்"
+
+msgid "You match this scheme"
+msgstr "இந்தத் திட்டத்திற்கு நீங்கள் பொருந்துகிறீர்கள்"
+
+msgid "More info needed"
+msgstr "மேலும் தகவல் தேவை"
+
+msgid "Does not currently match"
+msgstr "தற்போது பொருந்தவில்லை"
+
+msgid "Remove from Saved"
+msgstr "சேமித்தவற்றிலிருந்து நீக்கவும்"
+
+msgid "Bookmark scheme"
+msgstr "திட்டத்தைச் சேமிக்கவும்"
+
+msgid "Application Tracker"
+msgstr "விண்ணப்பக் கண்காணிப்பு"
+
+msgid "Current Stage"
+msgstr "தற்போதைய நிலை"
+
+msgid "Update Application Status"
+msgstr "விண்ணப்ப நிலையைப் புதுப்பிக்கவும்"
+
+msgid "Save Status Update"
+msgstr "நிலைப் புதுப்பிப்பைச் சேமிக்கவும்"
+
+msgid "Official Submission Link"
+msgstr "அதிகாரப்பூர்வ சமர்ப்பிப்பு இணைப்பு"
+
+msgid "Submit your application or check official status on the official portal."
+msgstr "அதிகாரப்பூர்வ தளத்தில் விண்ணப்பத்தைச் சமர்ப்பிக்கவும் அல்லது அதன் நிலையைப் பார்க்கவும்."
+
+msgid "Open Official Portal"
+msgstr "அதிகாரப்பூர்வ தளத்தைத் திறக்கவும்"
+
+msgid "Summary"
+msgstr "சுருக்கம்"
+
+msgid "Jurisdiction"
+msgstr "அதிகார வரம்பு"
+
+msgid "Central Government"
+msgstr "மத்திய அரசு"
+
+msgid "Tracked Since"
+msgstr "கண்காணிப்பு தொடங்கிய நாள்"
+
+msgid "Last Updated"
+msgstr "கடைசியாகப் புதுப்பிக்கப்பட்டது"
+
+msgid "View Full Scheme Details"
+msgstr "திட்டத்தின் முழு விவரங்களைப் பார்க்கவும்"
+
+msgid "Breadcrumb"
+msgstr "பக்க வழித்தடம்"
+
+msgid "Track your personal application status, documentation progress, and portal reference numbers."
+msgstr "உங்கள் விண்ணப்ப நிலை, ஆவணத் தயாரிப்பு முன்னேற்றம் மற்றும் தளக் குறிப்பு எண்களைக் கண்காணிக்கவும்."
+
+msgid "Track New Scheme"
+msgstr "புதிய திட்டத்தைக் கண்காணிக்கவும்"
+
+msgid "Note:"
+msgstr "குறிப்பு:"
+
+msgid "This tracker is a personal management tool. Actual application submission and official verification occur on authorized government web portals."
+msgstr "இது உங்கள் தனிப்பட்ட நிர்வாகக் கருவி. உண்மையான விண்ணப்பச் சமர்ப்பிப்பும் அதிகாரப்பூர்வ சரிபார்ப்பும் அங்கீகரிக்கப்பட்ட அரசு இணையதளங்களில் நடைபெறும்."
+
+msgid "Ref No:"
+msgstr "குறிப்பு எண்:"
+
+msgid "Updated"
+msgstr "புதுப்பிக்கப்பட்டது"
+
+msgid "Manage Status"
+msgstr "நிலையை நிர்வகிக்கவும்"
+
+msgid "Scheme Info"
+msgstr "திட்டத் தகவல்"
+
+msgid "No tracked applications yet"
+msgstr "கண்காணிக்கப்படும் விண்ணப்பங்கள் இன்னும் இல்லை"
+
+msgid "When you find a scheme you want to apply for, click 'Track Application' on its details page to monitor your preparation and milestones."
+msgstr "விண்ணப்பிக்க விரும்பும் திட்டத்தைக் கண்டறிந்ததும், அதன் விவரப் பக்கத்தில் உள்ள 'விண்ணப்பத்தைக் கண்காணிக்கவும்' என்பதைத் தேர்ந்தெடுத்து உங்கள் தயாரிப்பையும் முன்னேற்றத்தையும் கவனிக்கவும்."
+
+msgid "Find Schemes to Apply"
+msgstr "விண்ணப்பிக்கத் திட்டங்களைக் கண்டறியவும்"
+
+msgid "Ask Civic AI — Intelligent Assistant"
+msgstr "Civic AI-யைக் கேளுங்கள் — அறிவார்ந்த உதவியாளர்"
+
+msgid "Tip:"
+msgstr "குறிப்பு:"
+
+msgid "Message to Civic AI"
+msgstr "Civic AI-க்கு செய்தி"
+
+msgid "Account"
+msgstr "கணக்கு"
+
+msgid "Application navigation"
+msgstr "விண்ணப்ப வழிசெலுத்தல்"
+
+msgid "Civic AI Home"
+msgstr "Civic AI முகப்பு"
+
+msgid "Toggle navigation menu"
+msgstr "வழிசெலுத்தல் பட்டியைத் திறக்கவும் அல்லது மூடவும்"
+
+msgid "Mobile navigation"
+msgstr "கைபேசி வழிசெலுத்தல்"
+
+msgid "Skip to main content"
+msgstr "முக்கிய உள்ளடக்கத்திற்குச் செல்லவும்"
+
+msgid "Help"
+msgstr "உதவி"
+
+msgid "Your guide to government schemes and citizen rights. Personalized. Simple. Trusted."
+msgstr "அரசுத் திட்டங்கள் மற்றும் குடிமக்கள் உரிமைகளுக்கான உங்களுக்கேற்ற வழிகாட்டி. எளிமையானது. நம்பகமானது."
+
+msgid "Quick Links"
+msgstr "விரைவு இணைப்புகள்"
+
+msgid "Made with ❤ for Indian Citizens"
+msgstr "இந்தியக் குடிமக்களுக்காக அன்புடன் உருவாக்கப்பட்டது"
+
+msgid "Main navigation"
+msgstr "முதன்மை வழிசெலுத்தல்"
+
+msgid "Here are your personalized updates."
+msgstr "உங்களுக்கான புதுப்பிப்புகள் இதோ."
+
+msgid "Complete Profile"
+msgstr "சுயவிவரத்தை முடிக்கவும்"
+
+msgid "complete"
+msgstr "முழுமை"
+
+msgid "Saved Schemes"
+msgstr "சேமித்த திட்டங்கள்"
+
+msgid "A complete profile helps us find more relevant schemes for you."
+msgstr "முழுமையான சுயவிவரம் உங்களுக்குப் பொருத்தமான திட்டங்களைக் கண்டறிய உதவும்."
+
+msgid "Add your employment details to discover more schemes."
+msgstr "மேலும் திட்டங்களைக் கண்டறிய உங்கள் வேலைவாய்ப்பு விவரங்களைச் சேர்க்கவும்."
+
+msgid "Add your income and family details for better matching."
+msgstr "மேலும் துல்லியமாகப் பொருத்த உங்கள் வருமானம் மற்றும் குடும்ப விவரங்களைச் சேர்க்கவும்."
+
+msgid "Almost done! Add a few more details."
+msgstr "கிட்டத்தட்ட முடிந்தது! இன்னும் சில விவரங்களைச் சேர்க்கவும்."
+
+msgid "View All"
+msgstr "அனைத்தையும் பார்க்கவும்"
+
+msgid "We are analyzing your profile. Check back soon."
+msgstr "உங்கள் சுயவிவரத்தை ஆய்வு செய்கிறோம். விரைவில் மீண்டும் பார்க்கவும்."
+
+msgid "Online"
+msgstr "இணையத்தில்"
+
+msgid "Suggested Questions"
+msgstr "பரிந்துரைக்கப்பட்ட கேள்விகள்"
+
+msgid "Explain this scheme in my language"
+msgstr "இந்தத் திட்டத்தை என் மொழியில் விளக்கவும்"
+
+msgid "What documents do I need?"
+msgstr "எனக்கு எந்த ஆவணங்கள் தேவை?"
+
+msgid "Are there schemes for my situation?"
+msgstr "என் நிலைக்கு ஏற்ற திட்டங்கள் உள்ளனவா?"
+
+msgid "Open full AI Assistant"
+msgstr "முழு AI உதவியாளரைத் திறக்கவும்"
+
+msgid "Save scheme"
+msgstr "திட்டத்தைச் சேமிக்கவும்"
+
+msgid "Send message"
+msgstr "செய்தியை அனுப்பவும்"
+
+msgid "Document Checklist"
+msgstr "ஆவணப் பட்டியல்"
+
+msgid "Manage readiness of required government documents before applying."
+msgstr "விண்ணப்பிக்கும் முன் தேவையான அரசு ஆவணங்கள் தயாராக உள்ளனவா என்பதை நிர்வகிக்கவும்."
+
+msgid "Privacy-First Architecture:"
+msgstr "தனியுரிமைக்கு முன்னுரிமை அளிக்கும் வடிவமைப்பு:"
+
+msgid "Civic AI does not upload or store your physical document files or identity numbers in Version 1. This checklist lets you privately track readiness to prevent application rejection."
+msgstr "முதல் பதிப்பில் Civic AI உங்கள் ஆவணக் கோப்புகளையோ அடையாள எண்களையோ பதிவேற்றவோ சேமிக்கவோ செய்யாது. விண்ணப்பம் நிராகரிக்கப்படுவதைத் தவிர்க்க, இந்தப் பட்டியலில் ஆவணத் தயார்நிலையைத் தனிப்பட்ட முறையில் கண்காணிக்கலாம்."
+
+msgid "Core Identity & Eligibility Documents (General Checklist)"
+msgstr "அடையாளம் மற்றும் தகுதிக்கான முக்கிய ஆவணங்கள் (பொதுப் பட்டியல்)"
+
+msgid "Aadhaar Card"
+msgstr "ஆதார் அட்டை"
+
+msgid "Required for DBT and identity authentication"
+msgstr "DBT மற்றும் அடையாளச் சரிபார்ப்புக்குத் தேவை"
+
+msgid "Bank Passbook / NPCI Linked Account"
+msgstr "வங்கி கணக்குப் புத்தகம் / NPCI இணைக்கப்பட்ட கணக்கு"
+
+msgid "Direct benefit transfer bank account"
+msgstr "நேரடி நலப் பரிமாற்றத்திற்கான வங்கிக் கணக்கு"
+
+msgid "Income Certificate"
+msgstr "வருமானச் சான்றிதழ்"
+
+msgid "Issued by MeeSeva (AP) or e-Sevai (TN) Tahsildar"
+msgstr "AP-யில் MeeSeva அல்லது TN-யில் e-Sevai வழியாக வட்டாட்சியர் வழங்குவது"
+
+msgid "Community / Caste Certificate"
+msgstr "சமூக / சாதிச் சான்றிதழ்"
+
+msgid "For OBC, SC, ST, or minority reservation benefits"
+msgstr "OBC, SC, ST அல்லது சிறுபான்மையினர் இடஒதுக்கீட்டு நலன்களுக்கு"
+
+msgid "Residence / Nativity Proof"
+msgstr "குடியிருப்பு / பூர்வீகச் சான்று"
+
+msgid "Ration card, voter ID, or nativity certificate"
+msgstr "குடும்ப அட்டை, வாக்காளர் அடையாள அட்டை அல்லது பூர்வீகச் சான்றிதழ்"
+
+msgid "Pattadar Passbook / Land Records"
+msgstr "பட்டாதார் கணக்குப் புத்தகம் / நில ஆவணங்கள்"
+
+msgid "For farmer subsidy and agricultural schemes"
+msgstr "விவசாயி மானியம் மற்றும் வேளாண்மைத் திட்டங்களுக்கு"
+
+msgid "Scheme-Specific Document Status"
+msgstr "திட்டத்திற்கான ஆவண நிலை"
+
+msgid "Notifications & Scheme Alerts"
+msgstr "அறிவிப்புகள் மற்றும் திட்ட எச்சரிக்கைகள்"
+
+msgid "Updates on new schemes, eligibility evaluations, and critical deadlines."
+msgstr "புதிய திட்டங்கள், தகுதி மதிப்பீடுகள் மற்றும் முக்கிய காலக்கெடுக்கள் பற்றிய புதுப்பிப்புகள்."
+
+msgid "Mark All as Read"
+msgstr "அனைத்தையும் படித்ததாகக் குறிக்கவும்"
+
+msgid "Mark as read"
+msgstr "படித்ததாகக் குறிக்கவும்"
+
+msgid "All caught up!"
+msgstr "அனைத்தும் பார்த்துவிட்டீர்கள்!"
+
+msgid "You have no new alerts. When new government schemes matching your profile are detected, you will be notified here."
+msgstr "புதிய எச்சரிக்கைகள் எதுவும் இல்லை. உங்கள் சுயவிவரத்திற்குப் பொருந்தும் அரசு திட்டங்கள் கண்டறியப்பட்டால் இங்கே தெரிவிக்கப்படும்."
+
+msgid "Citizen Profile"
+msgstr "குடிமக்கள் சுயவிவரம்"
+
+msgid "Manage your personal information, scheme eligibility criteria, and preferences."
+msgstr "உங்கள் தனிப்பட்ட தகவல், திட்டத் தகுதி நிபந்தனைகள் மற்றும் விருப்பங்களை நிர்வகிக்கவும்."
+
+msgid "Edit All Details"
+msgstr "அனைத்து விவரங்களையும் திருத்தவும்"
+
+msgid "Consent Active"
+msgstr "ஒப்புதல் செயலில் உள்ளது"
+
+msgid "Complete"
+msgstr "முழுமை"
+
+msgid "Personal Details"
+msgstr "தனிப்பட்ட விவரங்கள்"
+
+msgid "Edit"
+msgstr "திருத்தவும்"
+
+msgid "Calculated Age"
+msgstr "கணக்கிடப்பட்ட வயது"
+
+msgid "years"
+msgstr "ஆண்டுகள்"
+
+msgid "City / Town"
+msgstr "நகரம் / பேரூரம்"
+
+msgid "Student Status"
+msgstr "மாணவர் நிலை"
+
+msgid "Currently a Student"
+msgstr "தற்போது மாணவர்"
+
+msgid "Income & Category"
+msgstr "வருமானம் மற்றும் பிரிவு"
+
+msgid "Special Scheme Attributes"
+msgstr "சிறப்புத் திட்டத் தகவல்கள்"
+
+msgid "Disability Category"
+msgstr "மாற்றுத்திறன் வகை"
+
+msgid "Senior Citizen"
+msgstr "மூத்த குடிமகன்"
+
+msgid "Widow Beneficiary"
+msgstr "விதவைப் பயனாளர்"
+
+msgid "SHG Member"
+msgstr "சுயஉதவிக் குழு உறுப்பினர்"
+
+msgid "Job Seeker"
+msgstr "வேலை தேடுபவர்"
+
+msgid "Entrepreneur"
+msgstr "தொழில்முனைவோர்"
+
+msgid "Ration Card Holder"
+msgstr "குடும்ப அட்டைதாரர்"
+
+msgid "None specified yet. Complete Step 5 to configure specialized benefits."
+msgstr "இன்னும் எதுவும் குறிப்பிடப்படவில்லை. சிறப்புப் பயன்களை அமைக்க 5ஆம் படியை முடிக்கவும்."
+
+msgid "Privacy & Data Preferences"
+msgstr "தனியுரிமை மற்றும் தரவு விருப்பங்கள்"
+
+msgid "Civic AI processes your information solely for scheme matching under your explicit consent. Your data is never shared with third-party advertisers."
+msgstr "உங்கள் வெளிப்படையான ஒப்புதலுடன் திட்டப் பொருத்தத்திற்காக மட்டுமே Civic AI உங்கள் தகவல்களைப் பயன்படுத்துகிறது. உங்கள் தரவு மூன்றாம் தரப்பு விளம்பரதாரர்களுடன் பகிரப்படாது."
+
+msgid "Active"
+msgstr "செயலில் உள்ளது"
+
+msgid "Upcoming"
+msgstr "விரைவில் தொடங்கும்"
+
+msgid "Scheme Benefit"
+msgstr "திட்டப் பயன்"
+
+msgid "About this Scheme"
+msgstr "இந்தத் திட்டத்தைப் பற்றி"
+
+msgid "Configured Eligibility Conditions"
+msgstr "அமைக்கப்பட்ட தகுதி நிபந்தனைகள்"
+
+msgid "Mandatory Condition"
+msgstr "கட்டாய நிபந்தனை"
+
+msgid "Advisory / Preferred"
+msgstr "பரிந்துரை / விருப்பம்"
+
+msgid "Application Procedure"
+msgstr "விண்ணப்பிக்கும் முறை"
+
+msgid "Civic AI verifies scheme rules from authentic departmental circulars and official gazette notifications."
+msgstr "அதிகாரப்பூர்வ துறைச் சுற்றறிக்கைகள் மற்றும் அரசிதழ் அறிவிப்புகளின் அடிப்படையில் திட்ட விதிகளை Civic AI சரிபார்க்கிறது."
+
+msgid "Visit Official Portal"
+msgstr "அதிகாரப்பூர்வ தளத்தைப் பார்வையிடவும்"
+
+msgid "Last verified:"
+msgstr "கடைசியாகச் சரிபார்த்தது:"
+
+msgid "Legal Notice:"
+msgstr "சட்ட அறிவிப்பு:"
+
+msgid "Civic AI provides automated matching and informational guidance only. Final eligibility determination, document scrutiny, and benefit disbursement reside exclusively with the designated government department or statutory authority."
+msgstr "Civic AI தானியங்கித் திட்டப் பொருத்தத்தையும் தகவல் வழிகாட்டுதலையும் மட்டுமே வழங்குகிறது. இறுதித் தகுதி, ஆவணச் சரிபார்ப்பு மற்றும் நலன் வழங்கல் ஆகியவற்றை சம்பந்தப்பட்ட அரசு துறை அல்லது சட்டப்பூர்வ ஆணையமே தீர்மானிக்கும்."
+
+msgid "Your Eligibility Match"
+msgstr "உங்கள் தகுதிப் பொருத்தம்"
+
+msgid "You appear to qualify!"
+msgstr "நீங்கள் தகுதி பெறக்கூடும்!"
+
+msgid "You appear to meet the currently configured eligibility conditions."
+msgstr "தற்போது அமைக்கப்பட்ட தகுதி நிபந்தனைகளை நீங்கள் பூர்த்தி செய்வதாகத் தெரிகிறது."
+
+msgid "More info required"
+msgstr "மேலும் தகவல் தேவை"
+
+msgid "Update your profile to confirm match for all rules."
+msgstr "அனைத்து விதிகளுக்கும் பொருத்தத்தை உறுதிப்படுத்த உங்கள் சுயவிவரத்தைப் புதுப்பிக்கவும்."
+
+msgid "One or more mandatory conditions are not met."
+msgstr "ஒன்று அல்லது அதற்கு மேற்பட்ட கட்டாய நிபந்தனைகள் பூர்த்தி செய்யப்படவில்லை."
+
+msgid "Complete your profile to view your instant rule-by-rule match."
+msgstr "ஒவ்வொரு விதிக்கும் உடனடி பொருத்தத்தைப் பார்க்க உங்கள் சுயவிவரத்தை முடிக்கவும்."
+
+msgid "Evaluate My Profile"
+msgstr "என் சுயவிவரத்தை மதிப்பிடவும்"
+
+msgid "Sign in with your mobile number to see if you qualify for this scheme."
+msgstr "இந்தத் திட்டத்திற்கு நீங்கள் தகுதியானவரா என்பதைப் பார்க்க கைப்பேசி எண்ணுடன் உள்நுழையவும்."
+
+msgid "Sign In to Check Eligibility"
+msgstr "தகுதியைச் சரிபார்க்க உள்நுழையவும்"
+
+msgid "Track My Application"
+msgstr "என் விண்ணப்பத்தைக் கண்காணிக்கவும்"
+
+msgid "Save to Bookmarks"
+msgstr "புத்தகக்குறிகளில் சேமிக்கவும்"
+
+msgid "Mandatory"
+msgstr "கட்டாயம்"
+
+msgid "Standard identification proof (Aadhaar, Bank Passbook, Residence Proof) typically required."
+msgstr "பொதுவாக ஆதார், வங்கிக் கணக்குப் புத்தகம், குடியிருப்புச் சான்று போன்ற அடையாள ஆவணங்கள் தேவைப்படும்."
+
+msgid "Have questions?"
+msgstr "கேள்விகள் உள்ளனவா?"
+
+msgid "Ask Civic AI to explain this scheme in Telugu, Tamil, or simple English."
+msgstr "இந்தத் திட்டத்தைத் தெலுங்கு, தமிழ் அல்லது எளிய ஆங்கிலத்தில் விளக்க Civic AI-யைக் கேளுங்கள்."
+
+msgid "Ask Civic AI about this"
+msgstr "இதைப் பற்றி Civic AI-யிடம் கேளுங்கள்"
+
+msgid "Enter a date of birth within a reasonable age range."
+msgstr "நியாயமான வயது வரம்பிற்குள் உள்ள பிறந்த தேதியை உள்ளிடவும்."
+
+msgid "Enter a valid number of dependents."
+msgstr "சார்ந்திருப்போரின் சரியான எண்ணிக்கையை உள்ளிடவும்."
+
+msgid "Scheme state"
+msgstr "திட்டத்தின் மாநிலம்"
+
+msgid "Scheme district"
+msgstr "திட்டத்தின் மாவட்டம்"
+
+msgid "Application pages"
+msgstr "விண்ணப்பப் பக்கங்கள்"
+
+msgid "Document pages"
+msgstr "ஆவணப் பக்கங்கள்"
+
+msgid "Page"
+msgstr "பக்கம்"
+
+msgid "Previous"
+msgstr "முந்தையது"
+
+msgid "Next"
+msgstr "அடுத்தது"
+
+msgid "Above ₹12,00,000"
+msgstr "₹12,00,000-க்கு மேல்"
+
+msgid "Application Update"
+msgstr "விண்ணப்பப் புதுப்பிப்பு"
+
+msgid "Approved"
+msgstr "அங்கீகரிக்கப்பட்டது"
+
+msgid "Available"
+msgstr "கிடைக்கிறது"
+
+msgid "Below ₹1,00,000"
+msgstr "₹1,00,000-க்கு கீழ்"
+
+msgid "Choose Rural or Urban."
+msgstr "கிராமப்புறம் அல்லது நகர்ப்புறத்தைத் தேர்ந்தெடுக்கவும்."
+
+msgid "Choose Yes or No for each item."
+msgstr "ஒவ்வொரு உருப்படிக்கும் ஆம் அல்லது இல்லை என்பதைத் தேர்ந்தெடுக்கவும்."
+
+msgid "Choose a district in the selected state."
+msgstr "தேர்ந்தெடுத்த மாநிலத்தில் உள்ள மாவட்டத்தைத் தேர்ந்தெடுக்கவும்."
+
+msgid "Choose a state for this district."
+msgstr "இந்த மாவட்டத்திற்கான மாநிலத்தைத் தேர்ந்தெடுக்கவும்."
+
+msgid "Choose a valid state."
+msgstr "சரியான மாநிலத்தைத் தேர்ந்தெடுக்கவும்."
+
+msgid "Choose whether you are currently a student."
+msgstr "நீங்கள் தற்போது மாணவரா என்பதைத் தேர்ந்தெடுக்கவும்."
+
+msgid "Civic AI — Your Guide to Government Schemes"
+msgstr "Civic AI — அரசு நலத்திட்டங்களுக்கான உங்கள் வழிகாட்டி"
+
+msgid "Closed"
+msgstr "மூடப்பட்டது"
+
+msgid "Completed"
+msgstr "நிறைவு செய்யப்பட்டது"
+
+msgid "Date of birth cannot be in the future."
+msgstr "பிறந்த தேதி எதிர்காலத்தில் இருக்க முடியாது."
+
+msgid "Deadline Reminder"
+msgstr "கடைசி தேதி நினைவூட்டல்"
+
+msgid "District Level"
+msgstr "மாவட்ட அளவு"
+
+msgid "Document Required"
+msgstr "ஆவணம் தேவை"
+
+msgid "Does Not Currently Match"
+msgstr "தற்போது பொருந்தவில்லை"
+
+msgid "Eligibility Changed"
+msgstr "தகுதி நிலை மாறியுள்ளது"
+
+msgid "Enter a valid 6-digit PIN code."
+msgstr "சரியான 6 இலக்க அஞ்சல் குறியீட்டை உள்ளிடவும்."
+
+msgid "Enter a valid date of birth."
+msgstr "சரியான பிறந்த தேதியை உள்ளிடவும்."
+
+msgid "Enter with country code, e.g. +919876543210"
+msgstr "நாட்டுக் குறியீட்டுடன் உள்ளிடவும்; எ.கா., +919876543210"
+
+msgid "Getting it"
+msgstr "பெறப்படுகிறது"
+
+msgid "Good Afternoon"
+msgstr "மதிய வணக்கம்"
+
+msgid "Good Evening"
+msgstr "மாலை வணக்கம்"
+
+msgid "Good Morning"
+msgstr "காலை வணக்கம்"
+
+msgid "Important dates"
+msgstr "முக்கிய தேதிகள்"
+
+msgid "Large (more than 4 hectares)"
+msgstr "பெரியது (4 ஹெக்டேருக்கு மேல்)"
+
+msgid "Likely Eligible"
+msgstr "தகுதி இருக்கலாம்"
+
+msgid "Marginal (less than 1 hectare)"
+msgstr "மிகச் சிறியது (1 ஹெக்டேருக்கு குறைவு)"
+
+msgid "Medium (2–4 hectares)"
+msgstr "நடுத்தர அளவு (2–4 ஹெக்டேர்)"
+
+msgid "Missing"
+msgstr "விடுபட்டது"
+
+msgid "Mobile number is required"
+msgstr "கைபேசி எண் தேவை"
+
+msgid "More Information Needed"
+msgstr "கூடுதல் தகவல் தேவை"
+
+msgid "New Scheme"
+msgstr "புதிய திட்டம்"
+
+msgid "Not Started"
+msgstr "தொடங்கப்படவில்லை"
+
+msgid "OTP request"
+msgstr "OTP கோரிக்கை"
+
+msgid "OTP requests"
+msgstr "OTP கோரிக்கைகள்"
+
+msgid "PIN code"
+msgstr "அஞ்சல் குறியீடு"
+
+msgid "Permissions"
+msgstr "அனுமதிகள்"
+
+msgid "Personal info"
+msgstr "தனிப்பட்ட தகவல்"
+
+msgid "Preferences"
+msgstr "விருப்பங்கள்"
+
+msgid "Preparing Documents"
+msgstr "ஆவணங்கள் தயாராகின்றன"
+
+msgid "Privacy"
+msgstr "தனியுரிமை"
+
+msgid "Ready to Apply"
+msgstr "விண்ணப்பிக்கத் தயார்"
+
+msgid "Rejected"
+msgstr "நிராகரிக்கப்பட்டது"
+
+msgid "SHG member"
+msgstr "சுயஉதவி குழு உறுப்பினர்"
+
+msgid "Scheme removed from saved."
+msgstr "சேமித்த திட்டங்களிலிருந்து திட்டம் நீக்கப்பட்டது."
+
+msgid "Scheme saved!"
+msgstr "திட்டம் சேமிக்கப்பட்டது!"
+
+msgid "Set Up Your Profile"
+msgstr "உங்கள் சுயவிவரத்தை அமைக்கவும்"
+
+msgid "Small (1–2 hectares)"
+msgstr "சிறியது (1–2 ஹெக்டேர்)"
+
+msgid "Some entered values are invalid. Please check this step and try again."
+msgstr "சில உள்ளிடப்பட்ட மதிப்புகள் தவறானவை. இந்தப் படியைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்."
+
+msgid "State Government"
+msgstr "மாநில அரசு"
+
+msgid "Submitted"
+msgstr "சமர்ப்பிக்கப்பட்டது"
+
+msgid "Temporarily Suspended"
+msgstr "தற்காலிகமாக நிறுத்தப்பட்டது"
+
+msgid "The district must belong to the selected state."
+msgstr "மாவட்டம் தேர்ந்தெடுத்த மாநிலத்தைச் சேர்ந்ததாக இருக்க வேண்டும்."
+
+msgid "This profile step is invalid."
+msgstr "இந்தச் சுயவிவரப் படி செல்லாது."
+
+msgid "Under Verification"
+msgstr "சரிபார்ப்பில் உள்ளது"
+
+msgid "You have been logged out successfully."
+msgstr "நீங்கள் வெற்றிகரமாக வெளியேறிவிட்டீர்கள்."
+
+msgid "Your profile has been set up! Discovering schemes for you..."
+msgstr "உங்கள் சுயவிவரம் அமைக்கப்பட்டது! உங்களுக்கான திட்டங்களைத் தேடுகிறது..."
+
+msgid "active"
+msgstr "செயலில்"
+
+msgid "actively seeking employment"
+msgstr "தீவிரமாக வேலை தேடுபவர்"
+
+msgid "₹1,00,000 – ₹2,50,000"
+msgstr "₹1,00,000 – ₹2,50,000"
+
+msgid "₹2,50,000 – ₹5,00,000"
+msgstr "₹2,50,000 – ₹5,00,000"
+
+msgid "₹5,00,000 – ₹8,00,000"
+msgstr "₹5,00,000 – ₹8,00,000"
+
+msgid "₹8,00,000 – ₹12,00,000"
+msgstr "₹8,00,000 – ₹12,00,000"
+

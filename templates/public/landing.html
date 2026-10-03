@@ -1,0 +1,201 @@
+{% extends "base/public_base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Civic AI — Your Guide to Government Schemes" %}{% endblock %}
+
+{% block public_content %}
+
+<!-- Hero Section -->
+<section class="hero" aria-labelledby="hero-heading" style="background: linear-gradient(135deg, rgba(0, 53, 128, 0.94) 0%, rgba(26, 86, 164, 0.90) 60%, rgba(37, 99, 235, 0.88) 100%), url('{% static 'images/civic_ai/brand/cloud_bg.png' %}') center/cover no-repeat; background-image: linear-gradient(135deg, rgba(0, 53, 128, 0.94) 0%, rgba(26, 86, 164, 0.90) 60%, rgba(37, 99, 235, 0.88) 100%), image-set(url('{% static 'images/civic_ai/brand/cloud_bg.webp' %}') type('image/webp'), url('{% static 'images/civic_ai/brand/cloud_bg.png' %}') type('image/png'));">
+  <!-- Cloud decorative shapes -->
+  <div class="cloud-shape" style="width:300px;height:300px;top:-100px;right:5%;"></div>
+  <div class="cloud-shape" style="width:200px;height:200px;bottom:20px;right:25%;"></div>
+  <div class="cloud-shape" style="width:150px;height:150px;top:30%;left:2%;"></div>
+
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-12);align-items:center;">
+      <div>
+        <!-- Trust badge -->
+        <div style="display:inline-flex;align-items:center;gap:var(--space-2);background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:var(--radius-full);padding:var(--space-2) var(--space-4);margin-bottom:var(--space-6);">
+          <img src="{% static 'images/civic_ai/icons/icon_my_schemes.png' %}" alt="" style="width:18px;height:18px;object-fit:contain;">
+          <span style="font-size:var(--font-size-sm);font-weight:600;color:rgba(255,255,255,0.9);">{% trans "Government Scheme Discovery Platform" %}</span>
+        </div>
+
+        <h1 class="hero-title" id="hero-heading">
+          {% trans "Your Guide to Government Schemes and Rights" %}
+        </h1>
+        <p class="hero-subtitle">
+          {% trans "Personalized. Simple. Trusted." %}
+        </p>
+        <p style="font-size:var(--font-size-base);color:rgba(255,255,255,0.8);margin-bottom:var(--space-8);max-width:480px;">
+          {% trans "Discover government schemes you are eligible for, understand your rights, and get step-by-step guidance — all in your language." %}
+        </p>
+
+        <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;">
+          <a href="{% url 'states:select_state' %}" class="btn btn-lg" style="background:white;color:var(--color-primary);font-weight:700;">
+            {% trans "Get Started" %} →
+          </a>
+          <a href="{% url 'schemes:list' %}" class="btn btn-lg" style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.35);">
+            <img src="{% static 'images/civic_ai/icons/icon_explore_schemes.png' %}" alt="" style="width:20px;height:20px;object-fit:contain;vertical-align:middle;margin-right:var(--space-2);">
+            {% trans "Browse Schemes" %}
+          </a>
+        </div>
+
+        <!-- Language options -->
+        <div style="margin-top:var(--space-6);display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <span style="font-size:var(--font-size-xs);color:rgba(255,255,255,0.7);">{% trans "Available in:" %}</span>
+          <span style="font-size:var(--font-size-sm);color:rgba(255,255,255,0.9);font-weight:500;">English</span>
+          <span style="font-size:var(--font-size-sm);color:rgba(255,255,255,0.9);font-weight:500;">தமிழ்</span>
+          <span style="font-size:var(--font-size-sm);color:rgba(255,255,255,0.9);font-weight:500;">తెలుగు</span>
+        </div>
+      </div>
+
+      <!-- Right side: Hero Family Visual with trust highlight -->
+      <div style="position:relative;display:flex;justify-content:center;">
+        <div style="position:relative;width:100%;max-width:520px;border-radius:var(--radius-2xl);overflow:hidden;box-shadow:var(--shadow-xl);border:3px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.1);">
+          <picture>
+            <source srcset="{% static 'images/civic_ai/brand/hero_family.webp' %}" type="image/webp">
+            <img
+              src="{% static 'images/civic_ai/brand/hero_family.png' %}"
+              alt="{% trans 'Indian citizen family discovering government welfare schemes' %}"
+              width="1448" height="1086" fetchpriority="high" decoding="async"
+              style="width:100%;height:auto;display:block;object-fit:cover;max-height:420px;"
+            >
+          </picture>
+          <div style="position:absolute;bottom:var(--space-4);left:var(--space-4);right:var(--space-4);background:rgba(255,255,255,0.94);backdrop-filter:blur(10px);border-radius:var(--radius-xl);padding:var(--space-3) var(--space-4);display:flex;align-items:center;gap:var(--space-3);box-shadow:var(--shadow-md);">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--color-success-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <img src="{% static 'images/civic_ai/icons/icon_my_schemes.png' %}" alt="" style="width:22px;height:22px;object-fit:contain;">
+            </div>
+            <div>
+              <div style="font-weight:700;font-size:var(--font-size-sm);color:var(--color-text-primary);">
+                {% trans "100% Deterministic Scheme Matching" %}
+              </div>
+              <div style="font-size:var(--font-size-xs);color:var(--color-text-muted);">
+                {% trans "Verified criteria • Multilingual assistance • Free for citizens" %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section style="padding:var(--space-12) 0;background:var(--color-white);">
+  <div class="container">
+    <div class="grid-4">
+      <div style="text-align:center;padding:var(--space-6);">
+        <div style="font-size:var(--font-size-3xl);font-weight:800;color:var(--color-primary);">{{ schemes_count|default:'100+' }}</div>
+        <div style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin-top:var(--space-1);">{% trans "Active Schemes" %}</div>
+      </div>
+      <div style="text-align:center;padding:var(--space-6);">
+        <div style="font-size:var(--font-size-3xl);font-weight:800;color:var(--color-primary);">2</div>
+        <div style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin-top:var(--space-1);">{% trans "States Covered" %}</div>
+      </div>
+      <div style="text-align:center;padding:var(--space-6);">
+        <div style="font-size:var(--font-size-3xl);font-weight:800;color:var(--color-primary);">3</div>
+        <div style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin-top:var(--space-1);">{% trans "Languages" %}</div>
+      </div>
+      <div style="text-align:center;padding:var(--space-6);">
+        <div style="font-size:var(--font-size-3xl);font-weight:800;color:var(--color-primary);">Free</div>
+        <div style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin-top:var(--space-1);">{% trans "Always Free for Citizens" %}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section style="padding:var(--space-16) 0;background:var(--color-cloud);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:var(--space-12);">
+      <h2>{% trans "How Civic AI Works" %}</h2>
+      <p style="font-size:var(--font-size-lg);color:var(--color-text-muted);max-width:600px;margin:var(--space-4) auto 0;">
+        {% trans "Government information without government complexity." %}
+      </p>
+    </div>
+    <div class="grid-4">
+      <div style="text-align:center;">
+        <div style="width:60px;height:60px;background:var(--color-primary-50);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);">
+          <img src="{% static 'images/civic_ai/icons/icon_profile.png' %}" alt="" style="width:36px;height:36px;object-fit:contain;">
+        </div>
+        <h4 style="margin-bottom:var(--space-2);">{% trans "Create Profile" %}</h4>
+        <p style="font-size:var(--font-size-sm);color:var(--color-text-muted);">{% trans "Tell us about yourself once. We handle the rest." %}</p>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:60px;height:60px;background:var(--color-success-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);">
+          <img src="{% static 'images/civic_ai/icons/icon_explore_schemes.png' %}" alt="" style="width:36px;height:36px;object-fit:contain;">
+        </div>
+        <h4 style="margin-bottom:var(--space-2);">{% trans "Discover Schemes" %}</h4>
+        <p style="font-size:var(--font-size-sm);color:var(--color-text-muted);">{% trans "We match your profile against hundreds of schemes." %}</p>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:60px;height:60px;background:var(--color-warning-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);">
+          <img src="{% static 'images/civic_ai/icons/icon_documents.png' %}" alt="" style="width:36px;height:36px;object-fit:contain;">
+        </div>
+        <h4 style="margin-bottom:var(--space-2);">{% trans "Check Documents" %}</h4>
+        <p style="font-size:var(--font-size-sm);color:var(--color-text-muted);">{% trans "See exactly which documents you need to apply." %}</p>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:60px;height:60px;background:var(--color-primary-50);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);">
+          <img src="{% static 'images/civic_ai/icons/icon_applications.png' %}" alt="" style="width:36px;height:36px;object-fit:contain;">
+        </div>
+        <h4 style="margin-bottom:var(--space-2);">{% trans "Apply with Guidance" %}</h4>
+        <p style="font-size:var(--font-size-sm);color:var(--color-text-muted);">{% trans "Get step-by-step help from our AI assistant." %}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- State Selection CTA -->
+<section style="padding:var(--space-16) 0;background:var(--color-white);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:var(--space-10);">
+      <h2>{% trans "Choose Your State to Begin" %}</h2>
+      <p style="color:var(--color-text-muted);margin-top:var(--space-3);">{% trans "Civic AI is currently available in" %}</p>
+    </div>
+    <div style="display:flex;gap:var(--space-6);justify-content:center;flex-wrap:wrap;margin-bottom:var(--space-8);">
+      {% for state in active_states %}
+      <form method="post" action="{% url 'states:set_state' %}" style="max-width:280px;flex:1;">
+        {% csrf_token %}
+        <input type="hidden" name="state_slug" value="{{ state.slug }}">
+        <button type="submit" class="choice-card" style="width:100%;cursor:pointer;border:2px solid var(--color-gray-200);background:var(--color-white);font-family:inherit;padding:var(--space-4);text-align:left;" aria-label="{% trans 'Select' %} {{ state.name }}">
+          <div style="width:100%;height:140px;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:var(--space-3);background:var(--color-cloud);">
+            <img
+              src="{% static state.card_image %}"
+              alt="{{ state.transition_landmark|default:state.name }}"
+              style="width:100%;height:100%;object-fit:cover;"
+              loading="lazy"
+            >
+          </div>
+          <div style="font-size:var(--font-size-lg);font-weight:700;color:var(--color-text-primary);">{{ state.name }}</div>
+          <div style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin-top:var(--space-1);">{{ state.native_name }}</div>
+          {% if state.scheme_count %}
+          <div style="margin-top:var(--space-3);" class="badge badge-blue">{{ state.scheme_count }}+ {% trans "schemes" %}</div>
+          {% endif %}
+        </button>
+      </form>
+      {% endfor %}
+    </div>
+    <div style="text-align:center;">
+      <p style="color:var(--color-text-muted);font-size:var(--font-size-sm);">
+        {% trans "More states coming soon: Telangana, Kerala, Karnataka, Maharashtra..." %}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Disclaimer -->
+<section style="padding:var(--space-8) 0;background:var(--color-sky);">
+  <div class="container">
+    <div style="background:var(--color-info-light);border:1px solid #93c5fd;border-radius:var(--radius-xl);padding:var(--space-5) var(--space-6);display:flex;align-items:flex-start;gap:var(--space-4);">
+      <img src="{% static 'images/civic_ai/icons/icon_information.png' %}" alt="" style="width:28px;height:28px;object-fit:contain;flex-shrink:0;">
+      <p style="font-size:var(--font-size-sm);color:#1e3a8a;margin:0;">
+        <strong>{% trans "Information Disclaimer:" %}</strong>
+        {% trans "Civic AI provides general guidance based on publicly available government information. Final eligibility is determined by the responsible government authority. Always verify information from official government sources before making decisions." %}
+      </p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

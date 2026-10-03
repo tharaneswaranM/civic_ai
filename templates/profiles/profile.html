@@ -1,0 +1,186 @@
+{% extends "base/app_base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "My Profile" %} — Civic AI{% endblock %}
+
+{% block app_content %}
+<div class="page-header" style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:var(--space-4);">
+  <div>
+    <h1 class="page-title" style="display:flex;align-items:center;gap:var(--space-3);">
+      <img src="{% static 'images/civic_ai/icons/icon_profile.png' %}" alt="" style="width:40px;height:40px;object-fit:contain;">
+      <span>{% trans "Citizen Profile" %}</span>
+    </h1>
+    <p class="page-subtitle">
+      {% trans "Manage your personal information, scheme eligibility criteria, and preferences." %}
+    </p>
+  </div>
+  <a href="{% url 'dashboard:profile_setup_step' step=1 %}" class="btn btn-primary btn-sm">
+    {% trans "Edit All Details" %}
+  </a>
+</div>
+
+<!-- Profile Overview Card -->
+<div class="card" style="margin-bottom:var(--space-6);background:linear-gradient(135deg,#ffffff 0%,var(--color-cloud) 100%);">
+  <div style="display:flex;align-items:center;gap:var(--space-5);flex-wrap:wrap;">
+    <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-primary-light) 100%);color:white;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:800;flex-shrink:0;">
+      {{ user.get_short_name|first|upper }}
+    </div>
+    <div style="flex:1;min-width:200px;">
+      <h2 style="font-size:var(--font-size-xl);margin:0 0 2px;">{{ user.get_display_name }}</h2>
+      <div style="font-size:var(--font-size-sm);color:var(--color-text-muted);">
+        {{ user.mobile_number }}
+        {% if profile.state %} • {{ profile.state.name }}{% endif %}
+        {% if profile.district %} ({{ profile.district.name }}){% endif %}
+      </div>
+      <div style="margin-top:var(--space-2);display:flex;gap:var(--space-2);flex-wrap:wrap;">
+        <span class="badge badge-blue">
+          {% if user.preferred_language == 'ta' %}தமிழ்{% elif user.preferred_language == 'te' %}తెలుగు{% else %}English{% endif %}
+        </span>
+        <span class="badge badge-green">
+          {% trans "Consent Active" %}
+        </span>
+      </div>
+    </div>
+
+    <!-- Completion Ring -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-1);">
+      <div class="completion-ring" style="--pct:{{ profile.completion_percentage }};">
+        <span class="completion-value">{{ profile.completion_percentage }}%</span>
+      </div>
+      <span style="font-size:var(--font-size-xs);color:var(--color-text-muted);font-weight:600;">{% trans "Complete" %}</span>
+    </div>
+  </div>
+</div>
+
+<!-- Details Sections Grid -->
+<div class="grid-2" style="margin-bottom:var(--space-6);">
+
+  <!-- Personal Information -->
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-3);">
+      <h3 style="font-size:var(--font-size-md);margin:0;display:flex;align-items:center;gap:var(--space-2);">
+        <img src="{% static 'images/civic_ai/icons/icon_profile.png' %}" alt="" style="width:20px;height:20px;object-fit:contain;">
+        <span>{% trans "Personal Details" %}</span>
+      </h3>
+      <a href="{% url 'dashboard:profile_setup_step' step=1 %}" style="font-size:var(--font-size-xs);font-weight:600;">{% trans "Edit" %}</a>
+    </div>
+    <dl style="display:grid;grid-template-columns:140px 1fr;gap:var(--space-2);font-size:var(--font-size-sm);margin:0;">
+      <dt style="color:var(--color-text-muted);">{% trans "Full Name" %}:</dt>
+      <dd style="font-weight:600;margin:0;">{{ user.full_name|default:"—" }}</dd>
+      <dt style="color:var(--color-text-muted);">{% trans "Date of Birth" %}:</dt>
+      <dd style="margin:0;">{{ profile.date_of_birth|date:"d M Y"|default:"—" }}</dd>
+      <dt style="color:var(--color-text-muted);">{% trans "Calculated Age" %}:</dt>
+      <dd style="margin:0;">{% if profile.age %}{{ profile.age }} {% trans "years" %}{% else %}—{% endif %}</dd>
+      <dt style="color:var(--color-text-muted);">{% trans "Gender" %}:</dt>
+      <dd style="margin:0;">{{ profile.get_gender_display|default:"—" }}</dd>
+    </dl>
+  </div>
+
+  <!-- Location Details -->
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-3);">
+      <h3 style="font-size:var(--font-size-md);margin:0;display:flex;align-items:center;gap:var(--space-2);">
+        <img src="{% static 'images/civic_ai/icons/icon_explore_schemes.png' %}" alt="" style="width:20px;height:20px;object-fit:contain;">
+        <span>{% trans "Location" %}</span>
+      </h3>
+      <a href="{% url 'dashboard:profile_setup_step' step=2 %}" style="font-size:var(--font-size-xs);font-weight:600;">{% trans "Edit" %}</a>
+    </div>
+    <dl style="display:grid;grid-template-columns:140px 1fr;gap:var(--space-2);font-size:var(--font-size-sm);margin:0;">
+      <dt style="color:var(--color-text-muted);">{% trans "State" %}:</dt>
+      <dd style="font-weight:600;margin:0;">{{ profile.state.name|default:"—" }}</dd>
+      <dt style="color:var(--color-text-muted);">{% trans "District" %}:</dt>
+      <dd style="margin:0;">{{ profile.district.name|default:"—" }}</dd>
+      <dt style="color:var(--color-text-muted);">{% trans "City / Town" %}:</dt>
+      <dd style="margin:0;">{{ profile.city_village|default:"—" }}</dd>
+      <dt style="color:var(--color-text-muted);">{% trans "Area Type" %}:</dt>
+      <dd style="margin:0;">{% if profile.is_rural is not None %}{% if profile.is_rural %}{% trans "Rural" %}{% else %}{% trans "Urban" %}{% endif %}{% else %}—{% endif %}</dd>
+    </dl>
+  </div>
+
+  <!-- Education & Employment -->
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-3);">
+      <h3 style="font-size:var(--font-size-md);margin:0;display:flex;align-items:center;gap:var(--space-2);">
+        <img src="{% static 'images/civic_ai/icons/icon_documents.png' %}" alt="" style="width:20px;height:20px;object-fit:contain;">
+        <span>{% trans "Education & Employment" %}</span>
+      </h3>
+      <a href="{% url 'dashboard:profile_setup_step' step=3 %}" style="font-size:var(--font-size-xs);font-weight:600;">{% trans "Edit" %}</a>
+    </div>
+    <dl style="display:grid;grid-template-columns:140px 1fr;gap:var(--space-2);font-size:var(--font-size-sm);margin:0;">
+      <dt style="color:var(--color-text-muted);">{% trans "Education" %}:</dt>
+      <dd style="font-weight:600;margin:0;">{{ profile.get_education_level_display|default:"—" }}</dd>
+      <dt style="color:var(--color-text-muted);">{% trans "Employment" %}:</dt>
+      <dd style="margin:0;">{{ profile.get_employment_status_display|default:"—" }}</dd>
+      <dt style="color:var(--color-text-muted);">{% trans "Student Status" %}:</dt>
+      <dd style="margin:0;">{% if profile.is_student %}{% trans "Currently a Student" %}{% if profile.student_course %} ({{ profile.student_course }}){% endif %}{% else %}—{% endif %}</dd>
+      <dt style="color:var(--color-text-muted);">{% trans "Occupation" %}:</dt>
+      <dd style="margin:0;">{{ profile.occupation|default:"—" }}</dd>
+    </dl>
+  </div>
+
+  <!-- Income & Family -->
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-3);">
+      <h3 style="font-size:var(--font-size-md);margin:0;display:flex;align-items:center;gap:var(--space-2);">
+        <img src="{% static 'images/civic_ai/icons/icon_my_schemes.png' %}" alt="" style="width:20px;height:20px;object-fit:contain;">
+        <span>{% trans "Income & Category" %}</span>
+      </h3>
+      <a href="{% url 'dashboard:profile_setup_step' step=4 %}" style="font-size:var(--font-size-xs);font-weight:600;">{% trans "Edit" %}</a>
+    </div>
+    <dl style="display:grid;grid-template-columns:140px 1fr;gap:var(--space-2);font-size:var(--font-size-sm);margin:0;">
+      <dt style="color:var(--color-text-muted);">{% trans "Annual Income" %}:</dt>
+      <dd style="font-weight:600;margin:0;">{{ profile.get_individual_income_range_display|default:"—" }}</dd>
+      <dt style="color:var(--color-text-muted);">{% trans "Family Income" %}:</dt>
+      <dd style="margin:0;">{{ profile.get_family_income_range_display|default:"—" }}</dd>
+      <dt style="color:var(--color-text-muted);">{% trans "Social Category" %}:</dt>
+      <dd style="margin:0;">{{ profile.get_category_display|default:"—" }}</dd>
+      <dt style="color:var(--color-text-muted);">{% trans "Marital Status" %}:</dt>
+      <dd style="margin:0;">{{ profile.get_marital_status_display|default:"—" }}</dd>
+    </dl>
+  </div>
+
+</div>
+
+<!-- Scheme Eligibility Indicators -->
+<div class="card" style="margin-bottom:var(--space-6);">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-3);">
+    <h3 style="font-size:var(--font-size-md);margin:0;display:flex;align-items:center;gap:var(--space-2);">
+      <img src="{% static 'images/civic_ai/icons/icon_applications.png' %}" alt="" style="width:20px;height:20px;object-fit:contain;">
+      <span>{% trans "Special Scheme Attributes" %}</span>
+    </h3>
+    <a href="{% url 'dashboard:profile_setup_step' step=5 %}" style="font-size:var(--font-size-xs);font-weight:600;">{% trans "Edit" %}</a>
+  </div>
+  <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+    {% if profile.is_farmer %}<span class="badge badge-green">{% trans "Farmer" %} ({{ profile.get_land_holding_display|default:_("General") }})</span>{% endif %}
+    {% if profile.has_disability %}<span class="badge badge-blue">{% trans "Disability Category" %}</span>{% endif %}
+    {% if profile.is_senior_citizen %}<span class="badge badge-orange">{% trans "Senior Citizen" %}</span>{% endif %}
+    {% if profile.is_widow %}<span class="badge badge-orange">{% trans "Widow Beneficiary" %}</span>{% endif %}
+    {% if profile.is_shg_member %}<span class="badge badge-blue">{% trans "SHG Member" %}</span>{% endif %}
+    {% if profile.is_job_seeker %}<span class="badge badge-blue">{% trans "Job Seeker" %}</span>{% endif %}
+    {% if profile.is_entrepreneur %}<span class="badge badge-green">{% trans "Entrepreneur" %}</span>{% endif %}
+    {% if profile.is_ration_card_holder %}<span class="badge badge-gray">{% trans "Ration Card Holder" %}</span>{% endif %}
+    {% if not profile.is_farmer and not profile.has_disability and not profile.is_senior_citizen and not profile.is_widow and not profile.is_shg_member and not profile.is_job_seeker and not profile.is_entrepreneur and not profile.is_ration_card_holder %}
+    <span style="font-size:var(--font-size-sm);color:var(--color-text-muted);">{% trans "None specified yet. Complete Step 5 to configure specialized benefits." %}</span>
+    {% endif %}
+  </div>
+</div>
+
+<!-- Account & Privacy Controls -->
+<div class="card" style="border:1.5px solid var(--color-gray-200);">
+  <h3 style="font-size:var(--font-size-md);margin-bottom:var(--space-3);display:flex;align-items:center;gap:var(--space-2);">
+    <img src="{% static 'images/civic_ai/icons/icon_information.png' %}" alt="" style="width:20px;height:20px;object-fit:contain;">
+    <span>{% trans "Privacy & Data Preferences" %}</span>
+  </h3>
+  <p style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin-bottom:var(--space-4);">
+    {% trans "Civic AI processes your information solely for scheme matching under your explicit consent. Your data is never shared with third-party advertisers." %}
+  </p>
+  <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+    <form method="post" action="{% url 'accounts:logout' %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-ghost btn-sm" style="color:var(--color-error);border-color:var(--color-error);">
+        {% trans "Sign Out" %}
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

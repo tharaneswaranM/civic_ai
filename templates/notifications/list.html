@@ -1,0 +1,104 @@
+{% extends "base/app_base.html" %}
+{% load i18n static humanize %}
+
+{% block title %}{% trans "Notifications" %} — Civic AI{% endblock %}
+
+{% block app_content %}
+<div class="page-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4);">
+  <div>
+    <h1 class="page-title" style="display:flex;align-items:center;gap:var(--space-3);">
+      <img src="{% static 'images/civic_ai/icons/icon_notifications.png' %}" alt="" style="width:40px;height:40px;object-fit:contain;">
+      <span>{% trans "Notifications & Scheme Alerts" %}</span>
+    </h1>
+    <p class="page-subtitle">
+      {% trans "Updates on new schemes, eligibility evaluations, and critical deadlines." %}
+    </p>
+  </div>
+
+  {% if notifications %}
+  <form method="post" action="{% url 'notifications:mark_all_read' %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-ghost btn-sm">
+      ✓ {% trans "Mark All as Read" %}
+    </button>
+  </form>
+  {% endif %}
+</div>
+
+{% if notifications %}
+<div class="card" style="padding:0;overflow:hidden;">
+  <div style="display:flex;flex-direction:column;">
+    {% for n in notifications %}
+    <div class="notification-item {% if not n.is_read %}unread{% endif %}">
+      <!-- Icon based on type -->
+      <div style="width:42px;height:42px;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;flex-shrink:0;
+        {% if n.notification_type == 'new_scheme' %}background:var(--color-primary-50);
+        {% elif n.notification_type == 'eligibility_changed' %}background:var(--color-success-light);
+        {% elif n.notification_type == 'deadline' %}background:var(--color-warning-light);
+        {% else %}background:var(--color-gray-100);{% endif %}">
+        {% if n.notification_type == 'new_scheme' %}
+        <img src="{% static 'images/civic_ai/icons/icon_explore_schemes.png' %}" alt="" style="width:24px;height:24px;object-fit:contain;">
+        {% elif n.notification_type == 'eligibility_changed' %}
+        <img src="{% static 'images/civic_ai/icons/icon_my_schemes.png' %}" alt="" style="width:24px;height:24px;object-fit:contain;">
+        {% elif n.notification_type == 'deadline' %}
+        <img src="{% static 'images/civic_ai/icons/icon_information.png' %}" alt="" style="width:24px;height:24px;object-fit:contain;">
+        {% elif n.notification_type == 'document_required' %}
+        <img src="{% static 'images/civic_ai/icons/icon_documents.png' %}" alt="" style="width:24px;height:24px;object-fit:contain;">
+        {% elif n.notification_type == 'application_update' %}
+        <img src="{% static 'images/civic_ai/icons/icon_applications.png' %}" alt="" style="width:24px;height:24px;object-fit:contain;">
+        {% else %}
+        <img src="{% static 'images/civic_ai/icons/icon_notifications.png' %}" alt="" style="width:24px;height:24px;object-fit:contain;">
+        {% endif %}
+      </div>
+
+      <!-- Content -->
+      <div style="flex:1;min-width:0;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:var(--space-3);margin-bottom:var(--space-1);">
+          <h3 style="font-size:var(--font-size-base);font-weight:700;color:var(--color-text-primary);margin:0;">
+            {{ n.title }}
+          </h3>
+          <span style="font-size:var(--font-size-xs);color:var(--color-text-muted);white-space:nowrap;">
+            {{ n.created_at|naturaltime }}
+          </span>
+        </div>
+
+        <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin:0 0 var(--space-2);line-height:1.5;">
+          {{ n.body }}
+        </p>
+
+        <div style="display:flex;gap:var(--space-3);align-items:center;">
+          {% if n.safe_action_url %}
+          <a href="{{ n.safe_action_url }}" class="btn btn-primary btn-sm" style="font-size:11px;min-height:30px;padding:2px 10px;">
+            {{ n.action_label|default:_("View Scheme") }} →
+          </a>
+          {% endif %}
+
+          {% if not n.is_read %}
+          <form method="post" action="{% url 'notifications:mark_read' n.pk %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-ghost btn-sm" style="font-size:11px;min-height:30px;padding:2px 8px;border:none;color:var(--color-text-muted);">
+              {% trans "Mark as read" %}
+            </button>
+          </form>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% else %}
+<div class="card" style="text-align:center;padding:var(--space-12);">
+  <div style="margin-bottom:var(--space-4);">
+    <img src="{% static 'images/civic_ai/icons/icon_notifications.png' %}" alt="" style="width:56px;height:56px;object-fit:contain;">
+  </div>
+  <h2>{% trans "All caught up!" %}</h2>
+  <p style="color:var(--color-text-muted);max-width:400px;margin:var(--space-2) auto var(--space-6);">
+    {% trans "You have no new alerts. When new government schemes matching your profile are detected, you will be notified here." %}
+  </p>
+  <a href="{% url 'schemes:list' %}" class="btn btn-primary">
+    {% trans "Explore Current Schemes" %}
+  </a>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base/base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Choose Your Language" %} — Civic AI{% endblock %}
+
+{% block body %}
+<main id="main-content" class="container" style="max-width:900px;padding:var(--space-10) var(--space-4);">
+  <h1>{% trans "Choose Your Language" %}</h1>
+  <p>{% trans "Select your preferred language to continue" %}</p>
+  <div class="grid-3" style="margin-top:var(--space-6);">
+    {% for lang in languages %}
+    <form method="post" action="{% url 'states:set_language' %}">
+      {% csrf_token %}
+      <input type="hidden" name="language_code" value="{{ lang.code }}">
+      <button class="choice-card" type="submit" style="width:100%;padding:var(--space-6);">
+        {% if lang.flag_emoji %}{{ lang.flag_emoji }} {% endif %}{{ lang.native_name }}
+      </button>
+    </form>
+    {% endfor %}
+  </div>
+</main>
+{% endblock %}

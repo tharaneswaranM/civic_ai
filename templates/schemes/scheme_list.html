@@ -1,0 +1,186 @@
+{% extends "base/app_base.html" %}
+{% load i18n static %}
+
+{% block title %}{{ page_title }} — Civic AI{% endblock %}
+
+{% block app_content %}
+<div class="page-header" style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:var(--space-4);">
+  <div>
+    <h1 class="page-title" style="display:flex;align-items:center;gap:var(--space-3);">
+      {% if is_eligible_filter %}
+      <img src="{% static 'images/civic_ai/icons/icon_my_schemes.png' %}" alt="" style="width:40px;height:40px;object-fit:contain;flex-shrink:0;">
+      <span>{% trans "My Eligible Schemes" %}</span>
+      {% else %}
+      <img src="{% static 'images/civic_ai/icons/icon_explore_schemes.png' %}" alt="" style="width:40px;height:40px;object-fit:contain;flex-shrink:0;">
+      <span>{% trans "Explore Schemes" %}</span>
+      {% endif %}
+    </h1>
+    <p class="page-subtitle">
+      {% if is_eligible_filter %}
+      {% trans "Schemes tailored to your verified eligibility criteria." %}
+      {% else %}
+      {% trans "Discover central and state government schemes, subsidies, and citizen benefits." %}
+      {% endif %}
+    </p>
+  </div>
+
+  {% if is_eligible_filter %}
+  <a href="{% url 'schemes:list' %}" class="btn btn-ghost btn-sm">
+    {% trans "View All Schemes" %} →
+  </a>
+  {% endif %}
+</div>
+
+<!-- Search & Filter Bar -->
+<div class="card card-sm" style="margin-bottom:var(--space-6);">
+  <form method="get" action="{% url 'schemes:list' %}" style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+    {% if is_eligible_filter %}
+    <input type="hidden" name="eligible" value="1">
+    {% endif %}
+    {% if current_category %}
+    <input type="hidden" name="category" value="{{ current_category }}">
+    {% endif %}
+
+    <div style="flex:1;min-width:240px;position:relative;">
+      <input
+        type="search"
+        name="q"
+        value="{{ search }}"
+        class="form-input"
+        placeholder="{% trans 'Search by scheme name, keyword, or benefit...' %}"
+        aria-label="{% trans 'Search schemes' %}"
+        style="padding-left:2.5rem;"
+      >
+      <img src="{% static 'images/civic_ai/icons/icon_explore_schemes.png' %}" alt="" style="position:absolute;left:0.85rem;top:50%;transform:translateY(-50%);width:20px;height:20px;object-fit:contain;pointer-events:none;">
+    </div>
+
+    <!-- State filter dropdown -->
+    <div style="min-width:180px;">
+      <select name="state" class="form-select" onchange="this.form.submit()" aria-label="{% trans 'Filter by state' %}">
+        <option value="">{% trans "All Jurisdictions" %}</option>
+        {% for st in active_states %}
+        <option value="{{ st.slug }}" {% if current_state == st.slug %}selected{% endif %}>{{ st.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="height:48px;">
+      {% trans "Search" %}
+    </button>
+    {% if search or current_category or current_state %}
+    <a href="{% url 'schemes:list' %}{% if is_eligible_filter %}?eligible=1{% endif %}" class="btn btn-ghost" style="height:48px;">
+      {% trans "Reset" %}
+    </a>
+    {% endif %}
+  </form>
+</div>
+
+<!-- Category Filter Pills -->
+<div style="display:flex;gap:var(--space-2);overflow-x:auto;padding-bottom:var(--space-4);margin-bottom:var(--space-6);-webkit-overflow-scrolling:touch;">
+  <a
+    href="{% url 'schemes:list' %}{% if is_eligible_filter %}?eligible=1{% endif %}{% if current_state %}&state={{ current_state }}{% endif %}"
+    class="btn btn-sm {% if not current_category %}btn-primary{% else %}btn-ghost{% endif %}"
+    style="border-radius:var(--radius-full);white-space:nowrap;"
+  >
+    {% trans "All Categories" %}
+  </a>
+  {% for cat in categories %}
+  <a
+    href="{% url 'schemes:list' %}?category={{ cat.slug }}{% if is_eligible_filter %}&eligible=1{% endif %}{% if current_state %}&state={{ current_state }}{% endif %}"
+    class="btn btn-sm {% if current_category == cat.slug %}btn-primary{% else %}btn-ghost{% endif %}"
+    style="border-radius:var(--radius-full);white-space:nowrap;"
+  >
+    {{ cat.name }}
+  </a>
+  {% endfor %}
+</div>
+
+<!-- Scheme Cards Grid -->
+{% if schemes %}
+<div class="grid-auto">
+  {% for scheme in schemes %}
+  <div class="scheme-card">
+    <div class="scheme-card-header">
+      <div>
+        <div style="display:flex;gap:var(--space-2);margin-bottom:var(--space-2);flex-wrap:wrap;">
+          {% if scheme.state %}
+          <span class="badge badge-state">{{ scheme.state.name }}</span>
+          {% else %}
+          <span class="badge badge-central">{% trans "Central" %}</span>
+          {% endif %}
+          {% if scheme.is_new %}
+          <span class="badge badge-green">{% trans "New" %}</span>
+          {% endif %}
+        </div>
+        <h3 class="scheme-name" style="font-size:var(--font-size-md);">
+          <a href="{% url 'schemes:detail' scheme.slug %}" style="color:var(--color-text-primary);text-decoration:none;">
+            {{ scheme.display_name }}
+          </a>
+        </h3>
+      </div>
+
+      <!-- Eligibility indicator if calculated -->
+      {% if scheme.user_match %}
+        {% if scheme.user_match.result == 'eligible' %}
+        <span class="badge badge-green" title="{% trans 'You match this scheme' %}">{% trans "Eligible" %}</span>
+        {% elif scheme.user_match.result == 'incomplete' %}
+        <span class="badge badge-orange" title="{% trans 'More info needed' %}">{% trans "Check Info" %}</span>
+        {% else %}
+        <span class="badge badge-gray" title="{% trans 'Does not currently match' %}">{% trans "Not Matching" %}</span>
+        {% endif %}
+      {% endif %}
+    </div>
+
+    <p class="scheme-description">
+      {{ scheme.display_description|default:scheme.display_name }}
+    </p>
+
+    {% if scheme.display_benefit %}
+    <div class="scheme-benefit">
+      {{ scheme.display_benefit }}
+    </div>
+    {% endif %}
+
+    <div class="scheme-card-footer" style="padding-top:var(--space-3);border-top:1px solid var(--color-gray-100);display:flex;justify-content:space-between;align-items:center;">
+      <a href="{% url 'schemes:detail' scheme.slug %}" class="btn btn-primary btn-sm">
+        {% trans "View Details" %} →
+      </a>
+      {% if user.is_authenticated %}
+      <form method="post" action="{% url 'schemes:save' scheme.slug %}" style="display:inline;">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="{% if scheme.is_saved_by_user %}remove{% else %}save{% endif %}">
+        <button type="submit" class="btn btn-ghost btn-sm" aria-label="{% if scheme.is_saved_by_user %}{% trans 'Remove from Saved' %}{% else %}{% trans 'Bookmark scheme' %}{% endif %}" title="{% if scheme.is_saved_by_user %}{% trans 'Remove from Saved' %}{% else %}{% trans 'Bookmark scheme' %}{% endif %}">
+          {% if scheme.is_saved_by_user %}★ {% trans "Saved" %}{% else %}☆ {% trans "Save" %}{% endif %}
+        </button>
+      </form>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="card" style="text-align:center;padding:var(--space-12);">
+  <img src="{% static 'images/civic_ai/icons/icon_explore_schemes.png' %}" alt="" style="width:56px;height:56px;object-fit:contain;margin-bottom:var(--space-4);opacity:0.6;">
+  <h2>{% trans "No schemes found" %}</h2>
+  <p style="color:var(--color-text-muted);max-width:440px;margin:var(--space-2) auto var(--space-6);">
+    {% if search %}
+    {% trans "No schemes matched your search query. Try broadening your keywords or removing filters." %}
+    {% elif is_eligible_filter %}
+    {% trans "No matching schemes found yet. Update your profile with more details to unlock eligibility." %}
+    {% else %}
+    {% trans "No schemes available for the selected filters." %}
+    {% endif %}
+  </p>
+  <div style="display:flex;gap:var(--space-3);justify-content:center;">
+    <a href="{% url 'schemes:list' %}" class="btn btn-primary">
+      {% trans "Clear Filters" %}
+    </a>
+    {% if is_eligible_filter %}
+    <a href="{% url 'dashboard:profile_setup_step' step=1 %}" class="btn btn-secondary">
+      {% trans "Update Profile" %}
+    </a>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+{% endblock %}

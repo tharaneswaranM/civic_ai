@@ -1,0 +1,291 @@
+{% extends "base/app_base.html" %}
+{% load i18n static %}
+
+{% block title %}{{ display_name }} — Civic AI{% endblock %}
+
+{% block app_content %}
+<!-- Breadcrumb -->
+<nav aria-label="{% trans 'Breadcrumb' %}" style="margin-bottom:var(--space-4);">
+  <ol style="display:flex;align-items:center;gap:var(--space-2);list-style:none;font-size:var(--font-size-sm);color:var(--color-text-muted);">
+    <li><a href="{% url 'dashboard:home' %}">{% trans "Dashboard" %}</a></li>
+    <li>›</li>
+    <li><a href="{% url 'schemes:list' %}">{% trans "Schemes" %}</a></li>
+    <li>›</li>
+    <li aria-current="page" style="color:var(--color-text-primary);font-weight:600;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+      {{ display_name }}
+    </li>
+  </ol>
+</nav>
+
+<!-- Page Header -->
+<div style="margin-bottom:var(--space-6);">
+  <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-3);">
+    {% if scheme.state %}
+    <span class="badge badge-state">{{ scheme.state.name }}</span>
+    {% else %}
+    <span class="badge badge-central">{% trans "Central Government" %}</span>
+    {% endif %}
+
+    {% if scheme.department %}
+    <span class="badge badge-gray">{{ scheme.department.name }}</span>
+    {% endif %}
+
+    {% if scheme.status == 'active' %}
+    <span class="badge badge-green">● {% trans "Active" %}</span>
+    {% elif scheme.status == 'upcoming' %}
+    <span class="badge badge-orange">{% trans "Upcoming" %}</span>
+    {% else %}
+    <span class="badge badge-red">{{ scheme.get_status_display }}</span>
+    {% endif %}
+  </div>
+
+  <h1 style="font-size:var(--font-size-2xl);font-weight:800;color:var(--color-text-primary);line-height:1.25;">
+    {{ display_name }}
+  </h1>
+  {% if scheme.short_name %}
+  <p style="font-size:var(--font-size-md);color:var(--color-text-muted);margin-top:var(--space-1);">
+    ({{ scheme.short_name }})
+  </p>
+  {% endif %}
+</div>
+
+<!-- Main 2-Column Grid -->
+<div style="display:grid;grid-template-columns:1fr 380px;gap:var(--space-6);align-items:start;">
+
+  <!-- Left Column: Details -->
+  <div style="display:flex;flex-direction:column;gap:var(--space-6);">
+
+    <!-- Benefit Highlight Box -->
+    {% if display_benefit %}
+    <div class="card" style="background:linear-gradient(135deg,#e6f7ee 0%,#f0fdf4 100%);border:1.5px solid #86efac;">
+      <div>
+        <h2 style="font-size:var(--font-size-md);font-weight:700;color:#14532d;margin-bottom:var(--space-2);">
+          {% trans "Scheme Benefit" %}
+        </h2>
+        <p style="font-size:var(--font-size-base);color:#166534;margin:0;font-weight:500;line-height:1.6;">
+          {{ display_benefit }}
+        </p>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- About / Description -->
+    <div class="card">
+      <h2 style="font-size:var(--font-size-lg);margin-bottom:var(--space-3);display:flex;align-items:center;gap:var(--space-2);">
+        <img src="{% static 'images/civic_ai/icons/icon_information.png' %}" alt="" style="width:24px;height:24px;object-fit:contain;">
+        <span>{% trans "About this Scheme" %}</span>
+      </h2>
+      <div style="color:var(--color-text-secondary);font-size:var(--font-size-base);line-height:1.7;white-space:pre-line;">
+        {{ display_description|default:_("Details are being updated by the department.") }}
+      </div>
+    </div>
+
+    <!-- Eligibility Conditions -->
+    <div class="card">
+      <h2 style="font-size:var(--font-size-lg);margin-bottom:var(--space-4);display:flex;align-items:center;gap:var(--space-2);">
+        <img src="{% static 'images/civic_ai/icons/icon_my_schemes.png' %}" alt="" style="width:24px;height:24px;object-fit:contain;">
+        <span>{% trans "Configured Eligibility Conditions" %}</span>
+      </h2>
+      {% if version.eligibility_rules.all %}
+      <div style="display:flex;flex-direction:column;gap:var(--space-3);">
+        {% for rule in version.eligibility_rules.all %}
+        <div style="padding:var(--space-3);background:var(--color-cloud);border-radius:var(--radius-md);">
+          <div style="font-weight:600;font-size:var(--font-size-sm);color:var(--color-text-primary);">
+            {{ rule.display_label|default:rule.get_rule_type_display }}
+          </div>
+          <div style="font-size:var(--font-size-xs);color:var(--color-text-muted);margin-top:2px;">
+            {% if rule.is_mandatory %}
+            <span style="color:var(--color-primary);font-weight:600;">{% trans "Mandatory Condition" %}</span>
+            {% else %}
+            <span>{% trans "Advisory / Preferred" %}</span>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p style="color:var(--color-text-muted);font-size:var(--font-size-sm);margin:0;">
+        {% trans "General citizen eligibility applies. Please refer to official portal guidelines." %}
+      </p>
+      {% endif %}
+    </div>
+
+    <!-- How to Apply -->
+    {% if display_how_to_apply %}
+    <div class="card">
+      <h2 style="font-size:var(--font-size-lg);margin-bottom:var(--space-3);display:flex;align-items:center;gap:var(--space-2);">
+        <img src="{% static 'images/civic_ai/icons/icon_applications.png' %}" alt="" style="width:24px;height:24px;object-fit:contain;">
+        <span>{% trans "Application Procedure" %}</span>
+      </h2>
+      <div style="color:var(--color-text-secondary);font-size:var(--font-size-base);line-height:1.7;white-space:pre-line;">
+        {{ display_how_to_apply }}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Official Source & Transparency -->
+    <div class="card" style="background:var(--color-sky);border:1px solid var(--color-primary-100);">
+      <h3 style="font-size:var(--font-size-md);margin-bottom:var(--space-2);color:var(--color-primary-dark);">
+        {% trans "Official Source & Verification" %}
+      </h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-4);">
+        {% trans "Civic AI verifies scheme rules from authentic departmental circulars and official gazette notifications." %}
+      </p>
+      <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center;">
+          {% if official_url %}
+        <a href="{{ official_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          {% trans "Visit Official Portal" %} ↗
+        </a>
+        {% endif %}
+        {% if scheme.last_verified_date %}
+        <span style="font-size:var(--font-size-xs);color:var(--color-text-muted);">
+          {% trans "Last verified:" %} {{ scheme.last_verified_date|date:"d M Y" }}
+        </span>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Legal Disclaimer -->
+    <div style="background:var(--color-info-light);border:1px solid #93c5fd;border-radius:var(--radius-lg);padding:var(--space-4);display:flex;gap:var(--space-3);align-items:flex-start;">
+      <img src="{% static 'images/civic_ai/icons/icon_information.png' %}" alt="" style="width:24px;height:24px;object-fit:contain;flex-shrink:0;">
+      <p style="font-size:var(--font-size-xs);color:#1e3a8a;margin:0;line-height:1.5;">
+        <strong>{% trans "Legal Notice:" %}</strong>
+        {% trans "Civic AI provides automated matching and informational guidance only. Final eligibility determination, document scrutiny, and benefit disbursement reside exclusively with the designated government department or statutory authority." %}
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Right Column: Eligibility & Actions -->
+  <div style="display:flex;flex-direction:column;gap:var(--space-5);position:sticky;top:var(--space-4);">
+
+    <!-- Personalized Match Card -->
+    <div class="card" style="border-top:4px solid var(--color-primary);">
+      <h3 style="font-size:var(--font-size-md);font-weight:700;margin-bottom:var(--space-3);display:flex;align-items:center;gap:var(--space-2);">
+        <img src="{% static 'images/civic_ai/icons/icon_my_schemes.png' %}" alt="" style="width:22px;height:22px;object-fit:contain;">
+        <span>{% trans "Your Eligibility Match" %}</span>
+      </h3>
+
+      {% if user.is_authenticated %}
+        {% if eligibility_result %}
+          {% if eligibility_result.result == 'eligible' %}
+          <div class="alert alert-success" style="margin-bottom:var(--space-4);">
+            <div>
+              <strong>{% trans "You appear to qualify!" %}</strong>
+              <div style="font-size:var(--font-size-xs);margin-top:2px;">
+                {% trans "You appear to meet the currently configured eligibility conditions." %}
+              </div>
+            </div>
+          </div>
+          {% elif eligibility_result.result == 'incomplete' %}
+          <div class="alert alert-warning" style="margin-bottom:var(--space-4);">
+            <div>
+              <strong>{% trans "More info required" %}</strong>
+              <div style="font-size:var(--font-size-xs);margin-top:2px;">
+                {% trans "Update your profile to confirm match for all rules." %}
+              </div>
+            </div>
+          </div>
+          {% else %}
+          <div class="alert alert-error" style="margin-bottom:var(--space-4);">
+            <div>
+              <strong>{% trans "Does not currently match" %}</strong>
+              <div style="font-size:var(--font-size-xs);margin-top:2px;">
+                {% trans "One or more mandatory conditions are not met." %}
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Checklist of rules -->
+          {% if eligibility_result.matched_rules %}
+          <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-bottom:var(--space-4);">
+            {% for r in eligibility_result.matched_rules %}
+            <div class="eligibility-item {% if r.passed %}passed{% else %}failed{% endif %}">
+              <span class="eligibility-check">{% if r.passed %}✓{% else %}✕{% endif %}</span>
+              <span style="font-size:var(--font-size-xs);font-weight:600;">{{ r.label|default:r.rule_type }}</span>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+        {% else %}
+          <p style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin-bottom:var(--space-4);">
+            {% trans "Complete your profile to view your instant rule-by-rule match." %}
+          </p>
+          <a href="{% url 'dashboard:profile_setup_step' step=1 %}" class="btn btn-primary btn-sm btn-full" style="margin-bottom:var(--space-3);">
+            {% trans "Evaluate My Profile" %}
+          </a>
+        {% endif %}
+
+      {% else %}
+        <p style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin-bottom:var(--space-4);">
+          {% trans "Sign in with your mobile number to see if you qualify for this scheme." %}
+        </p>
+        <a href="{% url 'accounts:login' %}" class="btn btn-primary btn-sm btn-full">
+          {% trans "Sign In to Check Eligibility" %}
+        </a>
+      {% endif %}
+
+      <!-- Action buttons -->
+      {% if user.is_authenticated %}
+      <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-top:var(--space-4);padding-top:var(--space-4);border-top:1px solid var(--color-gray-100);">
+          <form method="post" action="{% url 'applications:add' scheme_slug=scheme.slug %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary btn-full">
+          <img src="{% static 'images/civic_ai/icons/icon_applications.png' %}" alt="" style="width:18px;height:18px;object-fit:contain;vertical-align:middle;margin-right:var(--space-2);">
+          {% trans "Track My Application" %}
+            </button>
+          </form>
+        <form method="post" action="{% url 'schemes:save' scheme.slug %}">
+          {% csrf_token %}
+            <input type="hidden" name="action" value="{% if scheme.is_saved_by_user %}remove{% else %}save{% endif %}">
+          <button type="submit" class="btn btn-ghost btn-sm btn-full">
+            {% if scheme.is_saved_by_user %}★ {% trans "Remove from Saved" %}{% else %}☆ {% trans "Save to Bookmarks" %}{% endif %}
+          </button>
+        </form>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Required Documents Card -->
+    <div class="card">
+      <h3 style="font-size:var(--font-size-md);font-weight:700;margin-bottom:var(--space-3);display:flex;align-items:center;gap:var(--space-2);">
+        <img src="{% static 'images/civic_ai/icons/icon_documents.png' %}" alt="" style="width:22px;height:22px;object-fit:contain;">
+        <span>{% trans "Required Documents" %}</span>
+      </h3>
+      {% if version.required_documents.all %}
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--space-2);margin:0;padding:0;">
+        {% for doc in version.required_documents.all %}
+        <li style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--font-size-sm);padding:var(--space-2) 0;border-bottom:1px solid var(--color-gray-100);">
+          <span style="font-weight:500;">{{ doc.name }}</span>
+          {% if doc.is_mandatory %}
+          <span class="badge badge-orange" style="margin-left:auto;font-size:10px;">{% trans "Mandatory" %}</span>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p style="font-size:var(--font-size-xs);color:var(--color-text-muted);margin:0;">
+        {% trans "Standard identification proof (Aadhaar, Bank Passbook, Residence Proof) typically required." %}
+      </p>
+      {% endif %}
+    </div>
+
+    <!-- AI Assistant Prompt helper -->
+    <div class="card" style="background:var(--color-cloud);">
+      <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-2);">
+        <img src="{% static 'images/civic_ai/icons/icon_ai_assistant.png' %}" alt="" style="width:24px;height:24px;object-fit:contain;">
+        <h4 style="font-size:var(--font-size-sm);margin:0;">{% trans "Have questions?" %}</h4>
+      </div>
+      <p style="font-size:var(--font-size-xs);color:var(--color-text-muted);margin-bottom:var(--space-3);">
+        {% trans "Ask Civic AI to explain this scheme in Telugu, Tamil, or simple English." %}
+      </p>
+      <a href="{% url 'assistant:home' %}?scheme={{ scheme.slug }}" class="btn btn-ghost btn-sm btn-full">
+        {% trans "Ask Civic AI about this" %} →
+      </a>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

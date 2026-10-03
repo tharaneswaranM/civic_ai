@@ -1,0 +1,131 @@
+{% extends "base/app_base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "My Documents" %} — Civic AI{% endblock %}
+
+{% block app_content %}
+<div class="page-header" style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:var(--space-4);">
+  <div>
+    <h1 class="page-title" style="display:flex;align-items:center;gap:var(--space-3);">
+      <img src="{% static 'images/civic_ai/icons/icon_documents.png' %}" alt="" style="width:40px;height:40px;object-fit:contain;">
+      <span>{% trans "Document Checklist" %}</span>
+    </h1>
+    <p class="page-subtitle">
+      {% trans "Manage readiness of required government documents before applying." %}
+    </p>
+  </div>
+</div>
+
+<!-- Privacy guidance card -->
+<div style="background:var(--color-sky);border:1px solid var(--color-primary-100);border-radius:var(--radius-lg);padding:var(--space-4);margin-bottom:var(--space-6);display:flex;align-items:flex-start;gap:var(--space-3);">
+  <img src="{% static 'images/civic_ai/icons/icon_information.png' %}" alt="" style="width:24px;height:24px;object-fit:contain;flex-shrink:0;margin-top:2px;">
+  <p style="font-size:var(--font-size-xs);color:var(--color-primary-dark);margin:0;line-height:1.5;">
+    <strong>{% trans "Privacy-First Architecture:" %}</strong>
+    {% trans "Civic AI does not upload or store your physical document files or identity numbers in Version 1. This checklist lets you privately track readiness to prevent application rejection." %}
+  </p>
+</div>
+
+<!-- Standard Essential Documents checklist -->
+<div class="card" style="margin-bottom:var(--space-6);">
+  <h2 style="font-size:var(--font-size-md);font-weight:700;margin-bottom:var(--space-4);display:flex;align-items:center;gap:var(--space-2);">
+    <img src="{% static 'images/civic_ai/icons/icon_documents.png' %}" alt="" style="width:22px;height:22px;object-fit:contain;">
+    <span>{% trans "Core Identity & Eligibility Documents (General Checklist)" %}</span>
+  </h2>
+
+  <div class="grid-2">
+    <div style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3);border:1px solid var(--color-gray-200);border-radius:var(--radius-md);">
+      <div style="width:36px;height:36px;border-radius:var(--radius-md);background:var(--color-primary-50);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <img src="{% static 'images/civic_ai/icons/icon_documents.png' %}" alt="" style="width:20px;height:20px;object-fit:contain;">
+      </div>
+      <div>
+        <div style="font-weight:600;font-size:var(--font-size-sm);">{% trans "Aadhaar Card" %}</div>
+        <div style="font-size:var(--font-size-xs);color:var(--color-text-muted);">{% trans "Required for DBT and identity authentication" %}</div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3);border:1px solid var(--color-gray-200);border-radius:var(--radius-md);">
+      <div style="width:36px;height:36px;border-radius:var(--radius-md);background:var(--color-primary-50);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <img src="{% static 'images/civic_ai/icons/icon_documents.png' %}" alt="" style="width:20px;height:20px;object-fit:contain;">
+      </div>
+      <div>
+        <div style="font-weight:600;font-size:var(--font-size-sm);">{% trans "Bank Passbook / NPCI Linked Account" %}</div>
+        <div style="font-size:var(--font-size-xs);color:var(--color-text-muted);">{% trans "Direct benefit transfer bank account" %}</div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3);border:1px solid var(--color-gray-200);border-radius:var(--radius-md);">
+      <div style="width:36px;height:36px;border-radius:var(--radius-md);background:var(--color-primary-50);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <img src="{% static 'images/civic_ai/icons/icon_documents.png' %}" alt="" style="width:20px;height:20px;object-fit:contain;">
+      </div>
+      <div>
+        <div style="font-weight:600;font-size:var(--font-size-sm);">{% trans "Income Certificate" %}</div>
+        <div style="font-size:var(--font-size-xs);color:var(--color-text-muted);">{% trans "Issued by MeeSeva (AP) or e-Sevai (TN) Tahsildar" %}</div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3);border:1px solid var(--color-gray-200);border-radius:var(--radius-md);">
+      <div style="width:36px;height:36px;border-radius:var(--radius-md);background:var(--color-primary-50);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <img src="{% static 'images/civic_ai/icons/icon_documents.png' %}" alt="" style="width:20px;height:20px;object-fit:contain;">
+      </div>
+      <div>
+        <div style="font-weight:600;font-size:var(--font-size-sm);">{% trans "Community / Caste Certificate" %}</div>
+        <div style="font-size:var(--font-size-xs);color:var(--color-text-muted);">{% trans "For OBC, SC, ST, or minority reservation benefits" %}</div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3);border:1px solid var(--color-gray-200);border-radius:var(--radius-md);">
+      <div style="width:36px;height:36px;border-radius:var(--radius-md);background:var(--color-primary-50);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <img src="{% static 'images/civic_ai/icons/icon_documents.png' %}" alt="" style="width:20px;height:20px;object-fit:contain;">
+      </div>
+      <div>
+        <div style="font-weight:600;font-size:var(--font-size-sm);">{% trans "Residence / Nativity Proof" %}</div>
+        <div style="font-size:var(--font-size-xs);color:var(--color-text-muted);">{% trans "Ration card, voter ID, or nativity certificate" %}</div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3);border:1px solid var(--color-gray-200);border-radius:var(--radius-md);">
+      <div style="width:36px;height:36px;border-radius:var(--radius-md);background:var(--color-primary-50);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <img src="{% static 'images/civic_ai/icons/icon_documents.png' %}" alt="" style="width:20px;height:20px;object-fit:contain;">
+      </div>
+      <div>
+        <div style="font-weight:600;font-size:var(--font-size-sm);">{% trans "Pattadar Passbook / Land Records" %}</div>
+        <div style="font-size:var(--font-size-xs);color:var(--color-text-muted);">{% trans "For farmer subsidy and agricultural schemes" %}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scheme-specific document checklist -->
+{% if checklist %}
+<div class="card">
+  <h2 style="font-size:var(--font-size-md);font-weight:700;margin-bottom:var(--space-4);display:flex;align-items:center;gap:var(--space-2);">
+    <img src="{% static 'images/civic_ai/icons/icon_documents.png' %}" alt="" style="width:22px;height:22px;object-fit:contain;">
+    <span>{% trans "Scheme-Specific Document Status" %}</span>
+  </h2>
+  <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+    {% for item in checklist %}
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-3);background:var(--color-cloud);border-radius:var(--radius-md);">
+      <div>
+        <div style="font-weight:600;font-size:var(--font-size-sm);">{{ item.document_name }}</div>
+        <div style="font-size:var(--font-size-xs);color:var(--color-text-muted);">{{ item.scheme.name }}</div>
+      </div>
+      <span class="badge {% if item.status == 'available' %}badge-green{% elif item.status == 'missing' %}badge-red{% else %}badge-orange{% endif %}">
+        {{ item.get_status_display }}
+      </span>
+    </div>
+    {% endfor %}
+  </div>
+  {% if checklist.has_other_pages %}
+  <nav aria-label="{% trans 'Document pages' %}" style="display:flex;justify-content:center;align-items:center;gap:var(--space-3);margin-top:var(--space-6);">
+    {% if checklist.has_previous %}
+    <a class="btn btn-ghost btn-sm" href="?page={{ checklist.previous_page_number }}">{% trans "Previous" %}</a>
+    {% endif %}
+    <span aria-current="page">{% trans "Page" %} {{ checklist.number }} / {{ checklist.paginator.num_pages }}</span>
+    {% if checklist.has_next %}
+    <a class="btn btn-ghost btn-sm" href="?page={{ checklist.next_page_number }}">{% trans "Next" %}</a>
+    {% endif %}
+  </nav>
+  {% endif %}
+</div>
+{% endif %}
+{% endblock %}

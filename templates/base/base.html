@@ -1,0 +1,75 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="{{ current_language|default:'en' }}" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1a56a4">
+  <meta name="description" content="{% block meta_description %}Civic AI — Personalized Government Scheme Discovery for Indian Citizens{% endblock %}">
+
+  <title>{% block title %}{{ page_title|default:"Civic AI" }} — Civic AI{% endblock %}</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonts: Inter + Noto Sans for multilingual support -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/civic.css' %}">
+
+  <!-- CSRF for HTMX/Alpine -->
+  <meta name="csrf-token" content="{{ csrf_token }}">
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+  <!-- Skip to content (accessibility) -->
+  <a href="#main-content" class="sr-only" style="position:fixed;top:var(--space-4);left:var(--space-4);z-index:9999;background:var(--color-primary);color:white;padding:var(--space-3) var(--space-5);border-radius:var(--radius-lg);font-weight:600;">
+    {% trans "Skip to main content" %}
+  </a>
+
+  {% block body %}{% endblock %}
+
+  <!-- Django Messages -->
+  {% if messages %}
+  <div id="toast-container" style="position:fixed;top:var(--space-4);right:var(--space-4);z-index:9000;display:flex;flex-direction:column;gap:var(--space-3);max-width:400px;" aria-live="polite">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags|default:'info' }}" role="alert" style="animation:slideIn 0.3s ease;">
+      <span>{{ message }}</span>
+      <button type="button" onclick="this.parentElement.remove()" style="margin-left:auto;background:none;border:none;cursor:pointer;font-size:1.2rem;line-height:1;color:inherit;" aria-label="{% trans 'Dismiss' %}">×</button>
+    </div>
+    {% endfor %}
+  </div>
+  <style>
+    @keyframes slideIn { from { opacity:0; transform:translateX(20px); } to { opacity:1; transform:translateX(0); } }
+  </style>
+  <script>
+    // Auto-dismiss toasts after 5 seconds
+    setTimeout(() => {
+      const container = document.getElementById('toast-container');
+      if (container) container.style.opacity = '0', setTimeout(() => container.remove(), 300);
+    }, 5000);
+  </script>
+  {% endif %}
+
+  <script>
+    // Guard browser POST forms against rapid duplicate submissions.
+    document.addEventListener('submit', (event) => {
+      const form = event.target;
+      if (!form || form.tagName !== 'FORM' || form.method.toLowerCase() !== 'post') return;
+      const submitButton = event.submitter && event.submitter.form === form
+        ? event.submitter
+        : form.querySelector('button[type="submit"], input[type="submit"]');
+      if (submitButton && !submitButton.disabled) {
+        submitButton.disabled = true;
+        submitButton.setAttribute('aria-disabled', 'true');
+      }
+    }, true);
+  </script>
+
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,73 @@
+{% extends "base/base.html" %}
+{% load i18n static %}
+
+{% block body %}
+<!-- Public Navigation -->
+<nav class="topnav" role="navigation" aria-label="{% trans 'Main navigation' %}">
+  <a href="{% url 'states:landing' %}" class="topnav-logo" aria-label="{% trans 'Civic AI Home' %}">
+    <img src="{% static 'images/civic_ai/brand/logo.png' %}" alt="Civic AI" style="height:34px;width:auto;max-width:150px;object-fit:contain;">
+  </a>
+
+  <ul class="topnav-links" role="list">
+    <li><a href="{% url 'states:landing' %}">{% trans "Home" %}</a></li>
+    <li><a href="{% url 'schemes:list' %}">{% trans "Schemes" %}</a></li>
+    {% if user.is_authenticated %}
+    <li>
+      <a href="{% url 'dashboard:home' %}" class="btn btn-primary btn-sm">{% trans "Dashboard" %}</a>
+    </li>
+    {% else %}
+    <li>
+      <a href="{% url 'accounts:login' %}" class="btn btn-primary btn-sm">{% trans "Login" %}</a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+
+<main id="main-content">
+  {% block public_content %}{% endblock %}
+</main>
+
+<!-- Footer -->
+<footer style="background:var(--color-gray-900);color:var(--color-gray-400);padding:var(--space-12) 0;margin-top:var(--space-16);">
+  <div class="container">
+    <div class="grid-3" style="gap:var(--space-8);">
+      <div>
+        <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-4);">
+          <img src="{% static 'images/civic_ai/brand/logo.png' %}" alt="Civic AI" style="height:34px;width:auto;max-width:150px;object-fit:contain;">
+        </div>
+        <p style="font-size:var(--font-size-sm);color:var(--color-gray-400);margin:0;">
+          {% trans "Your guide to government schemes and citizen rights. Personalized. Simple. Trusted." %}
+        </p>
+      </div>
+      <div>
+        <h4 style="color:white;font-size:var(--font-size-sm);font-weight:600;margin-bottom:var(--space-4);text-transform:uppercase;letter-spacing:0.05em;">{% trans "Quick Links" %}</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--space-2);">
+          <li><a href="{% url 'schemes:list' %}" style="color:var(--color-gray-400);font-size:var(--font-size-sm);">{% trans "Browse Schemes" %}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:white;font-size:var(--font-size-sm);font-weight:600;margin-bottom:var(--space-4);text-transform:uppercase;letter-spacing:0.05em;">{% trans "Languages" %}</h4>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+          {% for code,label in available_languages.items %}
+          <form method="post" action="{% url 'states:set_language' %}" style="margin:0;">
+            {% csrf_token %}
+            <input type="hidden" name="language_code" value="{{ code }}">
+            <input type="hidden" name="next" value="{{ request.get_full_path }}">
+            <button type="submit" style="padding:0;border:0;background:none;color:var(--color-gray-400);font:inherit;font-size:var(--font-size-sm);cursor:pointer;">{{ label.native }}</button>
+          </form>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <hr style="border:none;border-top:1px solid rgba(255,255,255,0.1);margin:var(--space-8) 0;">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4);">
+      <p style="font-size:var(--font-size-xs);color:var(--color-gray-500);margin:0;">
+        © 2024 Civic AI. {% trans "Information provided is for guidance only. Always verify with official government sources." %}
+      </p>
+      <p style="font-size:var(--font-size-xs);color:var(--color-gray-600);margin:0;">
+        {% trans "Made with ❤ for Indian Citizens" %}
+      </p>
+    </div>
+  </div>
+</footer>
+{% endblock %}
